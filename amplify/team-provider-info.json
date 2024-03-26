@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fanmule-staging-145044-authRole",
+      "UnauthRoleArn": "arn:aws:iam::058264471746:role/amplify-fanmule-staging-145044-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::058264471746:role/amplify-fanmule-staging-145044-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-fanmule-staging-145044-deployment",
+      "UnauthRoleName": "amplify-fanmule-staging-145044-unauthRole",
+      "StackName": "amplify-fanmule-staging-145044",
+      "StackId": "arn:aws:cloudformation:us-east-1:058264471746:stack/amplify-fanmule-staging-145044/6d4591b0-cfff-11ee-bbc4-1257f7bf4169",
+      "AmplifyAppId": "dvkwsbz3joxst"
+    },
+    "categories": {
+      "auth": {
+        "FanMule": {}
+      }
+    }
+  }
+}
