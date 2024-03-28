@@ -6,29 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { UserProfile } from "../models";
-import { getOverrideProps, useAuth, useDataStoreCreateAction } from "./utils";
-import { schema } from "../models/schema";
-import {
-  Button,
-  Icon,
-  Image,
-  PasswordField,
-  Text,
-  View,
-} from "@aws-amplify/ui-react";
-export default function GoodSignUp(props) {
-  const { UsernameField, overrides, ...rest } = props;
-  const authAttributes = useAuth().user?.attributes ?? {};
-  const rectangleOneFiveOnClick = useDataStoreCreateAction({
-    fields: {
-      Username: authAttributes["preferred_username"],
-      Email: authAttributes["email"],
-      Birthday: authAttributes["birthdate"],
-    },
-    model: UserProfile,
-    schema: schema,
-  });
+import { getOverrideProps } from "./utils";
+import { Icon, Image, Text, View } from "@aws-amplify/ui-react";
+export default function SignIn(props) {
+  const { overrides, ...rest } = props;
   return (
     <View
       width="1480.2px"
@@ -39,7 +20,7 @@ export default function GoodSignUp(props) {
       justifyContent="unset"
       position="relative"
       padding="0px 0px 0px 0px"
-      {...getOverrideProps(overrides, "GoodSignUp")}
+      {...getOverrideProps(overrides, "SignIn")}
       {...rest}
     >
       <View
@@ -68,7 +49,7 @@ export default function GoodSignUp(props) {
         justifyContent="unset"
         position="absolute"
         top="11.87%"
-        bottom="11.87%"
+        bottom="11.88%"
         left="34.07%"
         right="33.98%"
         {...getOverrideProps(overrides, "Group 1")}
@@ -100,14 +81,14 @@ export default function GoodSignUp(props) {
           display="block"
           direction="column"
           justifyContent="unset"
-          width="105px"
-          height="34px"
+          width="105.53px"
+          height="42.45px"
           gap="unset"
           alignItems="unset"
           position="absolute"
-          top="23.82%"
-          bottom="72.24%"
-          left="8.81%"
+          top="23.77%"
+          bottom="71.31%"
+          left="8.7%"
           right="68.99%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -129,10 +110,10 @@ export default function GoodSignUp(props) {
           gap="unset"
           alignItems="unset"
           position="absolute"
-          top="41.19%"
-          bottom="53.23%"
-          left="8.81%"
-          right="68.88%"
+          top="39.02%"
+          bottom="55.41%"
+          left="8.7%"
+          right="68.99%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Email&#xA;"
@@ -160,6 +141,96 @@ export default function GoodSignUp(props) {
           fontFamily="Alata"
           fontSize="18px"
           fontWeight="400"
+          color="rgba(0,0,0,0.85)"
+          lineHeight="24.84000015258789px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="131.57px"
+          height="48.11px"
+          gap="unset"
+          alignItems="unset"
+          position="absolute"
+          top="49.84%"
+          bottom="44.59%"
+          left="8.7%"
+          right="63.48%"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Password&#xA;&#xA;"
+          {...getOverrideProps(overrides, "Password")}
+        ></Text>
+        <Icon
+          width="389.24px"
+          height="49.53px"
+          viewBox={{
+            minX: 0,
+            minY: 0,
+            width: 389.2377624511719,
+            height: 49.525001525878906,
+          }}
+          paths={[
+            {
+              d: "M4 1L385.238 1L385.238 -1L4 -1L4 1ZM388.238 4L388.238 45.525L390.238 45.525L390.238 4L388.238 4ZM385.238 48.525L4 48.525L4 50.525L385.238 50.525L385.238 48.525ZM1 45.525L1 4L-1 4L-1 45.525L1 45.525ZM4 48.525C2.34315 48.525 1 47.1819 1 45.525L-1 45.525C-1 48.2864 1.23858 50.525 4 50.525L4 48.525ZM388.238 45.525C388.238 47.1819 386.895 48.525 385.238 48.525L385.238 50.525C387.999 50.525 390.238 48.2864 390.238 45.525L388.238 45.525ZM385.238 1C386.895 1 388.238 2.34315 388.238 4L390.238 4C390.238 1.23858 387.999 -1 385.238 -1L385.238 1ZM4 -1C1.23858 -1 -1 1.23858 -1 4L1 4C1 2.34315 2.34315 1 4 1L4 -1Z",
+              stroke: "rgba(0,0,0,1)",
+              fillRule: "nonzero",
+              strokeWidth: 1,
+            },
+            {
+              d: "M0 4C0 1.79086 1.79086 0 4 0L385.238 0C387.447 0 389.238 1.79086 389.238 4L389.238 45.525C389.238 47.7341 387.447 49.525 385.238 49.525L4 49.525C1.79086 49.525 0 47.7341 0 45.525L0 4Z",
+              fill: "rgba(255,252,252,1)",
+              fillRule: "nonzero",
+            },
+          ]}
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          position="absolute"
+          top="54.75%"
+          bottom="39.51%"
+          left="8.7%"
+          right="8.99%"
+          {...getOverrideProps(overrides, "Rectangle 4")}
+        ></Icon>
+        <Icon
+          width="389.24px"
+          height="59.43px"
+          viewBox={{
+            minX: 0,
+            minY: 0,
+            width: 389.2377624511719,
+            height: 59.43000030517578,
+          }}
+          paths={[
+            {
+              d: "M4 1L385.238 1L385.238 -1L4 -1L4 1ZM388.238 4L388.238 55.43L390.238 55.43L390.238 4L388.238 4ZM385.238 58.43L4 58.43L4 60.43L385.238 60.43L385.238 58.43ZM1 55.43L1 4L-1 4L-1 55.43L1 55.43ZM4 58.43C2.34315 58.43 1 57.0869 1 55.43L-1 55.43C-1 58.1914 1.23858 60.43 4 60.43L4 58.43ZM388.238 55.43C388.238 57.0869 386.895 58.43 385.238 58.43L385.238 60.43C387.999 60.43 390.238 58.1914 390.238 55.43L388.238 55.43ZM385.238 1C386.895 1 388.238 2.34315 388.238 4L390.238 4C390.238 1.23858 387.999 -1 385.238 -1L385.238 1ZM4 -1C1.23858 -1 -1 1.23857 -1 4L1 4C1 2.34314 2.34315 1 4 1L4 -1Z",
+              stroke: "rgba(0,0,0,1)",
+              fillRule: "nonzero",
+              strokeWidth: 1,
+            },
+            {
+              d: "M0 4C0 1.79086 1.79086 0 4 0L385.238 0C387.447 0 389.238 1.79086 389.238 4L389.238 55.43C389.238 57.6391 387.447 59.43 385.238 59.43L4 59.43C1.79086 59.43 0 57.6391 0 55.43L0 4Z",
+              fill: "rgba(164,29,54,1)",
+              fillRule: "nonzero",
+            },
+          ]}
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          position="absolute"
+          top="74.26%"
+          bottom="18.85%"
+          left="8.12%"
+          right="9.57%"
+          {...getOverrideProps(overrides, "Rectangle 5")}
+        ></Icon>
+        <Text
+          fontFamily="Alata"
+          fontSize="18px"
+          fontWeight="400"
           color="rgba(255,255,255,1)"
           lineHeight="24.84000015258789px"
           textAlign="center"
@@ -180,22 +251,6 @@ export default function GoodSignUp(props) {
           children="Create Account"
           {...getOverrideProps(overrides, "Create Account")}
         ></Text>
-        <Button
-          width="385px"
-          height="51px"
-          position="absolute"
-          border="1px SOLID rgba(255,255,255,1)"
-          top="74.1%"
-          bottom="19.99%"
-          left="8.38%"
-          right="10.19%"
-          backgroundColor="rgba(149,4,4,1)"
-          size="default"
-          isDisabled={false}
-          variation="default"
-          children="Create Account"
-          {...getOverrideProps(overrides, "Button")}
-        ></Button>
         <Text
           fontFamily="Alata"
           fontSize="18px"
@@ -230,15 +285,15 @@ export default function GoodSignUp(props) {
           display="block"
           direction="column"
           justifyContent="unset"
-          width="382.38px"
+          width="382.39px"
           height="48.11px"
           gap="unset"
           alignItems="unset"
           position="absolute"
-          top="61.93%"
-          bottom="32.49%"
-          left="8.59%"
-          right="10.54%"
+          top="60.66%"
+          bottom="33.77%"
+          left="8.7%"
+          right="10.43%"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Birthday (MM/DD/YYYY)&#xA;&#xA;"
@@ -250,18 +305,18 @@ export default function GoodSignUp(props) {
           viewBox={{
             minX: 0,
             minY: 0,
-            width: 389.23681640625,
-            height: 49.52504348754883,
+            width: 389.2377624511719,
+            height: 49.525001525878906,
           }}
           paths={[
             {
-              d: "M4 1L385.237 1L385.237 -1L4 -1L4 1ZM388.237 4L388.237 45.525L390.237 45.525L390.237 4L388.237 4ZM385.237 48.525L3.99999 48.525L3.99999 50.525L385.237 50.525L385.237 48.525ZM1 45.525L1 4L-1 4L-1 45.525L1 45.525ZM3.99999 48.525C2.34314 48.525 1 47.1819 1 45.525L-1 45.525C-1 48.2865 1.23856 50.525 3.99999 50.525L3.99999 48.525ZM388.237 45.525C388.237 47.1819 386.894 48.525 385.237 48.525L385.237 50.525C387.998 50.525 390.237 48.2865 390.237 45.525L388.237 45.525ZM385.237 1C386.894 1 388.237 2.34314 388.237 4L390.237 4C390.237 1.23858 387.998 -1 385.237 -1L385.237 1ZM4 -1C1.23858 -1 -1 1.23858 -1 4L1 4C1 2.34315 2.34315 1 4 1L4 -1Z",
+              d: "M4 1L385.238 1L385.238 -1L4 -1L4 1ZM388.238 4L388.238 45.525L390.238 45.525L390.238 4L388.238 4ZM385.238 48.525L4 48.525L4 50.525L385.238 50.525L385.238 48.525ZM1 45.525L1 4L-1 4L-1 45.525L1 45.525ZM4 48.525C2.34315 48.525 1 47.1819 1 45.525L-1 45.525C-1 48.2864 1.23858 50.525 4 50.525L4 48.525ZM388.238 45.525C388.238 47.1819 386.895 48.525 385.238 48.525L385.238 50.525C387.999 50.525 390.238 48.2864 390.238 45.525L388.238 45.525ZM385.238 1C386.895 1 388.238 2.34315 388.238 4L390.238 4C390.238 1.23858 387.999 -1 385.238 -1L385.238 1ZM4 -1C1.23858 -1 -1 1.23858 -1 4L1 4C1 2.34315 2.34315 1 4 1L4 -1Z",
               stroke: "rgba(0,0,0,1)",
               fillRule: "nonzero",
               strokeWidth: 1,
             },
             {
-              d: "M0 4C0 1.79086 1.79086 0 4 0L385.237 0C387.446 0 389.237 1.79086 389.237 4L389.237 45.525C389.237 47.7342 387.446 49.525 385.237 49.525L3.99999 49.525C1.79085 49.525 0 47.7342 0 45.525L0 4Z",
+              d: "M0 4C0 1.79086 1.79086 0 4 0L385.238 0C387.447 0 389.238 1.79086 389.238 4L389.238 45.525C389.238 47.7341 387.447 49.525 385.238 49.525L4 49.525C1.79086 49.525 0 47.7341 0 45.525L0 4Z",
               fill: "rgba(255,252,252,1)",
               fillRule: "nonzero",
             },
@@ -323,18 +378,18 @@ export default function GoodSignUp(props) {
           viewBox={{
             minX: 0,
             minY: 0,
-            width: 389.23681640625,
-            height: 49.52504348754883,
+            width: 389.2377624511719,
+            height: 49.525001525878906,
           }}
           paths={[
             {
-              d: "M4 1L385.237 1L385.237 -1L4 -1L4 1ZM388.237 4L388.237 45.525L390.237 45.525L390.237 4L388.237 4ZM385.237 48.525L3.99999 48.525L3.99999 50.525L385.237 50.525L385.237 48.525ZM1 45.525L1 4L-1 4L-1 45.525L1 45.525ZM3.99999 48.525C2.34314 48.525 1 47.1819 1 45.525L-1 45.525C-1 48.2865 1.23856 50.525 3.99999 50.525L3.99999 48.525ZM388.237 45.525C388.237 47.1819 386.894 48.525 385.237 48.525L385.237 50.525C387.998 50.525 390.237 48.2865 390.237 45.525L388.237 45.525ZM385.237 1C386.894 1 388.237 2.34314 388.237 4L390.237 4C390.237 1.23858 387.998 -1 385.237 -1L385.237 1ZM4 -1C1.23858 -1 -1 1.23858 -1 4L1 4C1 2.34315 2.34315 1 4 1L4 -1Z",
+              d: "M4 1L385.238 1L385.238 -1L4 -1L4 1ZM388.238 4L388.238 45.525L390.238 45.525L390.238 4L388.238 4ZM385.238 48.525L4 48.525L4 50.525L385.238 50.525L385.238 48.525ZM1 45.525L1 4L-1 4L-1 45.525L1 45.525ZM4 48.525C2.34315 48.525 1 47.1819 1 45.525L-1 45.525C-1 48.2864 1.23858 50.525 4 50.525L4 48.525ZM388.238 45.525C388.238 47.1819 386.895 48.525 385.238 48.525L385.238 50.525C387.999 50.525 390.238 48.2864 390.238 45.525L388.238 45.525ZM385.238 1C386.895 1 388.238 2.34315 388.238 4L390.238 4C390.238 1.23858 387.999 -1 385.238 -1L385.238 1ZM4 -1C1.23858 -1 -1 1.23858 -1 4L1 4C1 2.34315 2.34315 1 4 1L4 -1Z",
               stroke: "rgba(0,0,0,1)",
               fillRule: "nonzero",
               strokeWidth: 1,
             },
             {
-              d: "M0 4C0 1.79086 1.79086 0 4 0L385.237 0C387.446 0 389.237 1.79086 389.237 4L389.237 45.525C389.237 47.7342 387.446 49.525 385.237 49.525L3.99999 49.525C1.79085 49.525 0 47.7342 0 45.525L0 4Z",
+              d: "M0 4C0 1.79086 1.79086 0 4 0L385.238 0C387.447 0 389.238 1.79086 389.238 4L389.238 45.525C389.238 47.7341 387.447 49.525 385.238 49.525L4 49.525C1.79086 49.525 0 47.7341 0 45.525L0 4Z",
               fill: "rgba(255,252,252,1)",
               fillRule: "nonzero",
             },
@@ -348,9 +403,6 @@ export default function GoodSignUp(props) {
           bottom="60.82%"
           left="8.7%"
           right="8.99%"
-          onClick={() => {
-            rectangleOneFiveOnClick();
-          }}
           {...getOverrideProps(overrides, "Rectangle 15")}
         ></Icon>
         <Image
@@ -372,23 +424,6 @@ export default function GoodSignUp(props) {
           objectFit="cover"
           {...getOverrideProps(overrides, "Logo")}
         ></Image>
-        <PasswordField
-          width="390px"
-          height="84px"
-          label="Password"
-          position="absolute"
-          top="50.93%"
-          bottom="39.34%"
-          left="8.81%"
-          right="8.71%"
-          placeholder="Placeholder"
-          size="default"
-          isDisabled={false}
-          labelHidden={false}
-          variation="default"
-          hideShowPassword={false}
-          {...getOverrideProps(overrides, "PasswordField")}
-        ></PasswordField>
       </View>
     </View>
   );

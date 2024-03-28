@@ -22,7 +22,7 @@ export declare type FormCheckoutOverridesProps = {
     "Frame 41129767005"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 313"?: PrimitiveOverrideProps<FlexProps>;
     "Frame 406"?: PrimitiveOverrideProps<FlexProps>;
-    "Shipping information"?: PrimitiveOverrideProps<TextProps>;
+    "Sign up information"?: PrimitiveOverrideProps<TextProps>;
     "Frame 426"?: PrimitiveOverrideProps<FlexProps>;
     TextField29767009?: PrimitiveOverrideProps<TextFieldProps>;
     TextField29767010?: PrimitiveOverrideProps<TextFieldProps>;
@@ -37,7 +37,7 @@ export declare type FormCheckoutOverridesProps = {
     PhoneNumberField?: PrimitiveOverrideProps<PhoneNumberFieldProps>;
     "Frame 41139343187"?: PrimitiveOverrideProps<FlexProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
-    image?: PrimitiveOverrideProps<ImageProps>;
+    Logo?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type FormCheckoutProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: FormCheckoutOverridesProps | undefined | null;

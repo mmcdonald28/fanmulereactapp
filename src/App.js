@@ -5,10 +5,10 @@ import logo2 from './logo_2.png';
 import logo3 from './logo.svg'
 
 function App() {
-  
+
   const GoodSignUpOverrides = {
     "Logo": {
-      path: "./logo.svg" // Replace this path with the path to your new logo image
+      path: "Users/Ptwo1127/Desktop/src/logo_2.png" // Replace this path with the path to your new logo image
     }
   };
 

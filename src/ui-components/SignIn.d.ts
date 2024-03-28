@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { UserProfile } from "../models";
-import { ButtonProps, IconProps, ImageProps, PasswordFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,16 +17,18 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type GoodSignUpOverridesProps = {
-    GoodSignUp?: PrimitiveOverrideProps<ViewProps>;
+export declare type SignInOverridesProps = {
+    SignIn?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 1"?: PrimitiveOverrideProps<ViewProps>;
     "Group 1"?: PrimitiveOverrideProps<ViewProps>;
     "Rectangle 2"?: PrimitiveOverrideProps<ViewProps>;
     "Sign Up"?: PrimitiveOverrideProps<TextProps>;
     Email?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 3"?: PrimitiveOverrideProps<ViewProps>;
+    Password?: PrimitiveOverrideProps<TextProps>;
+    "Rectangle 4"?: PrimitiveOverrideProps<IconProps>;
+    "Rectangle 5"?: PrimitiveOverrideProps<IconProps>;
     "Create Account"?: PrimitiveOverrideProps<TextProps>;
-    Button?: PrimitiveOverrideProps<ButtonProps>;
     "Already Have an Account? Login!"?: PrimitiveOverrideProps<TextProps>;
     Birthday?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 12"?: PrimitiveOverrideProps<IconProps>;
@@ -35,11 +36,8 @@ export declare type GoodSignUpOverridesProps = {
     Username?: PrimitiveOverrideProps<TextProps>;
     "Rectangle 15"?: PrimitiveOverrideProps<IconProps>;
     Logo?: PrimitiveOverrideProps<ImageProps>;
-    PasswordField?: PrimitiveOverrideProps<PasswordFieldProps>;
 } & EscapeHatchProps;
-export declare type GoodSignUpProps = React.PropsWithChildren<Partial<ViewProps> & {
-    UsernameField?: UserProfile;
-} & {
-    overrides?: GoodSignUpOverridesProps | undefined | null;
+export declare type SignInProps = React.PropsWithChildren<Partial<ViewProps> & {
+    overrides?: SignInOverridesProps | undefined | null;
 }>;
-export default function GoodSignUp(props: GoodSignUpProps): React.ReactElement;
+export default function SignIn(props: SignInProps): React.ReactElement;

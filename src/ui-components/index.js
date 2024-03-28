@@ -4,6 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as AccountRecovery } from "./AccountRecovery";
 export { default as ActionCard } from "./ActionCard";
 export { default as Ampligram } from "./Ampligram";
 export { default as CTASection } from "./CTASection";
@@ -36,9 +37,11 @@ export { default as ProductDetail } from "./ProductDetail";
 export { default as ProfileCard } from "./ProfileCard";
 export { default as ReviewCard } from "./ReviewCard";
 export { default as SideBar } from "./SideBar";
+export { default as SignIn } from "./SignIn";
 export { default as SocialPost } from "./SocialPost";
 export { default as StandardCard } from "./StandardCard";
 export { default as Stat } from "./Stat";
 export { default as TallCard } from "./TallCard";
+export { default as UpdateEmail } from "./UpdateEmail";
 export { default as UserProfileCreateForm } from "./UserProfileCreateForm";
 export { default as studioTheme } from "./studioTheme";
