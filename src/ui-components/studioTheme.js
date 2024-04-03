@@ -70,44 +70,6 @@ export default createTheme({
           },
         },
       },
-      autocomplete: {
-        menu: {
-          width: { value: "100%" },
-          marginBlockStart: { value: "{space.xxxs}" },
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderWidth: { value: "{borderWidths.small}" },
-          borderStyle: { value: "solid" },
-          borderRadius: { value: "{radii.small}" },
-          options: {
-            display: { value: "flex" },
-            flexDirection: { value: "column" },
-            maxHeight: { value: "300px" },
-          },
-          option: {
-            backgroundColor: { value: "{colors.background.primary}" },
-            color: { value: "currentcolor" },
-            cursor: { value: "pointer" },
-            transitionDuration: { value: "{time.short}" },
-            transitionProperty: { value: "background-color, color" },
-            transitionTimingFunction: { value: "ease" },
-            _active: {
-              backgroundColor: { value: "{colors.brand.primary.80}" },
-              color: { value: "{colors.white}" },
-            },
-          },
-          _empty: { display: { value: "flex" } },
-          _loading: {
-            alignItems: { value: "center" },
-            display: { value: "flex" },
-            gap: { value: "{space.xxxs}" },
-          },
-          spaceShared: {
-            paddingBlock: { value: "{space.xs}" },
-            paddingInline: { value: "{space.small}" },
-          },
-        },
-      },
       badge: {
         color: { value: "{colors.font.primary.value}" },
         lineHeight: { value: "1" },
@@ -145,38 +107,6 @@ export default createTheme({
           paddingHorizontal: { value: "{space.medium.value}" },
         },
       },
-      breadcrumbs: {
-        flexDirection: { value: "row" },
-        flexWrap: { value: "wrap" },
-        gap: { value: "0" },
-        color: { value: "{colors.font.tertiary}" },
-        item: {
-          flexDirection: { value: "row" },
-          color: { value: "inherit" },
-          fontSize: { value: "inherit" },
-          alignItems: { value: "center" },
-          lineHeight: { value: "1" },
-        },
-        separator: {
-          color: { value: "inherit" },
-          fontSize: { value: "inherit" },
-          paddingInline: { value: "{space.xxs}" },
-        },
-        link: {
-          color: { value: "{components.link.color}" },
-          fontSize: { value: "inherit" },
-          fontWeight: { value: "normal" },
-          textDecoration: { value: "none" },
-          paddingInline: { value: "{space.xs}" },
-          paddingBlock: { value: "{space.xxs}" },
-          current: {
-            color: { value: "inherit" },
-            fontSize: { value: "inherit" },
-            fontWeight: { value: "normal" },
-            textDecoration: { value: "none" },
-          },
-        },
-      },
       button: {
         fontWeight: { value: "{fontWeights.bold.value}" },
         transitionDuration: {
@@ -196,7 +126,6 @@ export default createTheme({
         paddingInlineEnd: {
           value: "{components.fieldcontrol.paddingInlineEnd.value}",
         },
-        backgroundColor: { value: "transparent" },
         borderColor: { value: "{components.fieldcontrol.borderColor.value}" },
         borderWidth: { value: "{components.fieldcontrol.borderWidth.value}" },
         borderStyle: { value: "{components.fieldcontrol.borderStyle.value}" },
@@ -229,153 +158,6 @@ export default createTheme({
           color: { value: "{colors.font.disabled.value}" },
           backgroundColor: { value: "transparent" },
           borderColor: { value: "{colors.border.tertiary.value}" },
-        },
-        outlined: {
-          info: {
-            borderColor: { value: "{colors.blue.60.value}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.blue.100}" },
-            _hover: {
-              borderColor: { value: "{colors.blue.60.value}" },
-              backgroundColor: { value: "{colors.blue.10.value}" },
-              color: { value: "{colors.blue.100.value}" },
-            },
-            _focus: {
-              borderColor: { value: "{colors.blue.100.value}" },
-              backgroundColor: { value: "{colors.blue.10.value}" },
-              color: { value: "{colors.blue.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.blue.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "{colors.blue.100.value}" },
-              backgroundColor: { value: "{colors.blue.20.value}" },
-              color: { value: "{colors.blue.100.value}" },
-            },
-          },
-          warning: {
-            borderColor: { value: "{colors.orange.60.value}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.orange.100}" },
-            _hover: {
-              borderColor: { value: "{colors.orange.60.value}" },
-              backgroundColor: { value: "{colors.orange.10.value}" },
-              color: { value: "{colors.orange.100.value}" },
-            },
-            _focus: {
-              borderColor: { value: "{colors.orange.100.value}" },
-              backgroundColor: { value: "{colors.orange.10.value}" },
-              color: { value: "{colors.orange.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.orange.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "{colors.orange.100.value}" },
-              backgroundColor: { value: "{colors.orange.20.value}" },
-              color: { value: "{colors.orange.100.value}" },
-            },
-          },
-          success: {
-            borderColor: { value: "{colors.green.60.value}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.green.100}" },
-            _hover: {
-              borderColor: { value: "{colors.green.60.value}" },
-              backgroundColor: { value: "{colors.green.10.value}" },
-              color: { value: "{colors.green.100.value}" },
-            },
-            _focus: {
-              borderColor: { value: "{colors.green.100.value}" },
-              backgroundColor: { value: "{colors.green.10.value}" },
-              color: { value: "{colors.green.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.green.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "{colors.green.100.value}" },
-              backgroundColor: { value: "{colors.green.20.value}" },
-              color: { value: "{colors.green.100.value}" },
-            },
-          },
-          error: {
-            borderColor: { value: "{colors.red.60.value}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.red.100}" },
-            _hover: {
-              borderColor: { value: "{colors.red.60.value}" },
-              backgroundColor: { value: "{colors.red.10.value}" },
-              color: { value: "{colors.red.100.value}" },
-            },
-            _focus: {
-              borderColor: { value: "{colors.red.100.value}" },
-              backgroundColor: { value: "{colors.red.10.value}" },
-              color: { value: "{colors.red.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.red.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "{colors.red.100.value}" },
-              backgroundColor: { value: "{colors.red.20.value}" },
-              color: { value: "{colors.red.100.value}" },
-            },
-          },
-          overlay: {
-            borderColor: { value: "{colors.overlay.60.value}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.font.primary.value}" },
-            _hover: {
-              borderColor: { value: "{colors.overlay.60.value}" },
-              backgroundColor: { value: "{colors.overlay.5.value}" },
-              color: { value: "{colors.neutral.90.value}" },
-            },
-            _focus: {
-              borderColor: { value: "{colors.overlay.90.value}" },
-              backgroundColor: { value: "{colors.overlay.5.value}" },
-              color: { value: "{colors.neutral.90.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.overlay.90.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "{colors.overlay.90.value}" },
-              backgroundColor: { value: "{colors.overlay.10.value}" },
-              color: { value: "{colors.neutral.100.value}" },
-            },
-          },
         },
         primary: {
           borderColor: { value: "transparent" },
@@ -411,154 +193,9 @@ export default createTheme({
             backgroundColor: { value: "{colors.brand.primary.100.value}" },
             color: { value: "{colors.font.inverse.value}" },
           },
-          info: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.blue.80}" },
-            color: { value: "{colors.font.inverse.value}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.blue.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.blue.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.blue.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.blue.100.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-          },
-          warning: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.orange.80}" },
-            color: { value: "{colors.font.inverse.value}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.orange.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.orange.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.orange.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.orange.100.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-          },
-          error: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.red.80}" },
-            color: { value: "{colors.font.inverse.value}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.red.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.red.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.red.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.red.100.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-          },
-          success: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.green.80}" },
-            color: { value: "{colors.font.inverse.value}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.green.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.green.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.green.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.green.100.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-          },
-          overlay: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.overlay.70}" },
-            color: { value: "{colors.font.inverse.value}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.overlay.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.overlay.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.overlay.90.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.overlay.90.value}" },
-              color: { value: "{colors.font.inverse.value}" },
-            },
-          },
         },
         menu: {
-          borderWidth: { value: "{space.zero.value}" },
+          borderWidth: { value: "0" },
           backgroundColor: { value: "transparent" },
           justifyContent: { value: "start" },
           _hover: {
@@ -576,9 +213,9 @@ export default createTheme({
           _disabled: { color: { value: "{colors.font.disabled.value}" } },
         },
         link: {
-          backgroundColor: { value: "transparent" },
+          borderWidth: { value: "0" },
           borderColor: { value: "transparent" },
-          borderWidth: { value: "{borderWidths.small.value}" },
+          backgroundColor: { value: "transparent" },
           color: { value: "{colors.font.interactive.value}" },
           _hover: {
             borderColor: { value: "transparent" },
@@ -607,220 +244,6 @@ export default createTheme({
             borderColor: { value: "transparent" },
             backgroundColor: { value: "transparent" },
             color: { value: "{colors.font.disabled.value}" },
-          },
-          info: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.blue.100}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.blue.10.value}" },
-              color: { value: "{colors.blue.90.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.blue.10.value}" },
-              color: { value: "{colors.blue.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.blue.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.blue.20.value}" },
-              color: { value: "{colors.blue.100.value}" },
-            },
-          },
-          warning: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.orange.100}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.orange.10.value}" },
-              color: { value: "{colors.orange.90.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.orange.10.value}" },
-              color: { value: "{colors.orange.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.orange.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.orange.20.value}" },
-              color: { value: "{colors.orange.100.value}" },
-            },
-          },
-          success: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.green.100}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.green.10.value}" },
-              color: { value: "{colors.green.90.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.green.10.value}" },
-              color: { value: "{colors.green.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.green.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.green.20.value}" },
-              color: { value: "{colors.green.100.value}" },
-            },
-          },
-          error: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.red.100}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.red.10.value}" },
-              color: { value: "{colors.red.90.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.red.10.value}" },
-              color: { value: "{colors.red.100.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.red.100.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.red.20.value}" },
-              color: { value: "{colors.red.100.value}" },
-            },
-          },
-          overlay: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.neutral.100}" },
-            _hover: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.overlay.5.value}" },
-              color: { value: "{colors.overlay.80.value}" },
-            },
-            _focus: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.overlay.5.value}" },
-              color: { value: "{colors.overlay.90.value}" },
-              boxShadow: {
-                value: {
-                  offsetX: "0px",
-                  offsetY: "0px",
-                  blurRadius: "0px",
-                  spreadRadius: "1px",
-                  color: "{colors.overlay.90.value}",
-                },
-              },
-            },
-            _active: {
-              borderColor: { value: "transparent" },
-              backgroundColor: { value: "{colors.overlay.10.value}" },
-              color: { value: "{colors.overlay.90.value}" },
-            },
-          },
-        },
-        warning: {
-          backgroundColor: { value: "transparent" },
-          borderColor: { value: "{colors.red.60}" },
-          borderWidth: { value: "{borderWidths.small}" },
-          color: { value: "{colors.red.60}" },
-          _hover: {
-            borderColor: { value: "{colors.red.80}" },
-            backgroundColor: { value: "{colors.red.10}" },
-            color: { value: "{colors.font.error}" },
-          },
-          _focus: {
-            borderColor: { value: "{colors.red.80}" },
-            backgroundColor: { value: "{colors.red.10}" },
-            color: { value: "{colors.red.80}" },
-            boxShadow: {
-              value: "{components.fieldcontrol._error._focus.boxShadow}",
-            },
-          },
-          _active: {
-            borderColor: { value: "{colors.red.100}" },
-            backgroundColor: { value: "{colors.red.20}" },
-            color: { value: "{colors.red.100}" },
-          },
-          _disabled: {
-            borderColor: { value: "{colors.border.tertiary}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.font.disabled}" },
-          },
-          _loading: {
-            borderColor: { value: "{colors.border.tertiary}" },
-            backgroundColor: { value: "transparent" },
-            color: { value: "{colors.font.disabled}" },
-          },
-        },
-        destructive: {
-          borderColor: { value: "transparent" },
-          borderWidth: { value: "{borderWidths.small}" },
-          borderStyle: { value: "solid" },
-          backgroundColor: { value: "{colors.red.60}" },
-          color: { value: "{colors.font.inverse}" },
-          _disabled: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.background.disabled}" },
-            color: { value: "{colors.font.disabled}" },
-          },
-          _loading: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.background.disabled}" },
-            color: { value: "{colors.font.disabled}" },
-          },
-          _hover: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.red.80}" },
-            color: { value: "{colors.font.inverse}" },
-          },
-          _focus: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.red.80}" },
-            color: { value: "{colors.font.inverse}" },
-            boxShadow: {
-              value: "{components.fieldcontrol._error._focus.boxShadow}",
-            },
-          },
-          _active: {
-            borderColor: { value: "transparent" },
-            backgroundColor: { value: "{colors.red.100}" },
-            color: { value: "{colors.font.inverse}" },
           },
         },
         small: {
@@ -891,7 +314,7 @@ export default createTheme({
           position: { value: "relative" },
           alignItems: { value: "center" },
           justifyContent: { value: "center" },
-          color: { value: "{colors.font.inverse.value}" },
+          color: { value: "{colors.white.value}" },
           before: {
             width: { value: "100%" },
             height: { value: "100%" },
@@ -950,13 +373,6 @@ export default createTheme({
               backgroundColor: { value: "{colors.background.disabled.value}" },
             },
           },
-          _indeterminate: {
-            opacity: { value: "{opacities.100.value}" },
-            transform: { value: "scale(1)" },
-            _disabled: {
-              backgroundColor: { value: "{colors.background.disabled.value}" },
-            },
-          },
         },
         label: {
           _disabled: { color: { value: "{colors.font.disabled.value}" } },
@@ -968,74 +384,6 @@ export default createTheme({
         flexDirection: { value: "column" },
         justifyContent: { value: "center" },
       },
-      collection: {
-        pagination: {
-          current: {
-            color: { value: "{components.pagination.current.color}" },
-            backgroundColor: {
-              value: "{components.pagination.current.backgroundColor}",
-            },
-          },
-          button: {
-            color: { value: "{components.pagination.button.color}" },
-            _hover: {
-              backgroundColor: {
-                value: "{components.pagination.button.hover.backgroundColor}",
-              },
-              color: { value: "{components.pagination.button.hover.color}" },
-            },
-            _disabled: {
-              color: { value: "{components.pagination.button.disabled.color}" },
-            },
-          },
-        },
-        search: {
-          input: { color: { value: "{components.searchfield.color}" } },
-          button: {
-            color: { value: "{components.searchfield.button.color}" },
-            _active: {
-              backgroundColor: {
-                value:
-                  "{components.searchfield.button._active.backgroundColor}",
-              },
-              borderColor: {
-                value: "{components.searchfield.button._active.borderColor}",
-              },
-              color: { value: "{components.searchfield.button._active.color}" },
-            },
-            _disabled: {
-              backgroundColor: {
-                value:
-                  "{components.searchfield.button._disabled.backgroundColor}",
-              },
-              borderColor: {
-                value: "{components.searchfield.button._disabled.borderColor}",
-              },
-              color: {
-                value: "{components.searchfield.button._disabled.color}",
-              },
-            },
-            _focus: {
-              backgroundColor: {
-                value: "{components.searchfield.button._focus.backgroundColor}",
-              },
-              borderColor: {
-                value: "{components.searchfield.button._focus.borderColor}",
-              },
-              color: { value: "{components.searchfield.button._focus.color}" },
-            },
-            _hover: {
-              backgroundColor: {
-                value: "{components.searchfield.button._hover.backgroundColor}",
-              },
-              borderColor: {
-                value: "{components.searchfield.button._hover.borderColor}",
-              },
-              color: { value: "{components.searchfield.button._hover.color}" },
-            },
-          },
-        },
-      },
       copy: {
         fontSize: { value: "{fontSizes.xs}" },
         gap: { value: "{space.relative.medium}" },
@@ -1046,7 +394,7 @@ export default createTheme({
           fontSize: { value: "{fontSizes.xxs}" },
         },
       },
-      countrycodeselect: { height: { value: "{space.relative.full.value}" } },
+      countrycodeselect: { height: { value: "100%" } },
       divider: {
         borderStyle: { value: "solid" },
         borderColor: { value: "{colors.border.primary.value}" },
@@ -1061,53 +409,9 @@ export default createTheme({
         large: { borderWidth: { value: "{borderWidths.large.value}" } },
         opacity: { value: "{opacities.60.value}" },
       },
-      dropzone: {
-        backgroundColor: { value: "{colors.background.primary}" },
-        borderRadius: { value: "{radii.small}" },
-        borderColor: { value: "{colors.border.primary}" },
-        borderStyle: { value: "dashed" },
-        borderWidth: { value: "{borderWidths.small}" },
-        color: { value: "{colors.font.primary}" },
-        gap: { value: "{space.small}" },
-        paddingBlock: { value: "{space.xl}" },
-        paddingInline: { value: "{space.large}" },
-        textAlign: { value: "center" },
-        _active: {
-          backgroundColor: { value: "{colors.brand.primary.10}" },
-          borderRadius: { value: "{components.dropzone.borderRadius}" },
-          borderColor: { value: "{colors.border.pressed}" },
-          borderStyle: { value: "{components.dropzone.borderStyle}" },
-          borderWidth: { value: "{components.dropzone.borderWidth}" },
-          color: { value: "{colors.font.primary}" },
-        },
-        _disabled: {
-          backgroundColor: { value: "{colors.background.disabled}" },
-          borderRadius: { value: "{components.dropzone.borderRadius}" },
-          borderColor: { value: "{colors.border.disabled}" },
-          borderStyle: { value: "{components.dropzone.borderStyle}" },
-          borderWidth: { value: "{components.dropzone.borderWidth}" },
-          color: { value: "{colors.font.disabled}" },
-        },
-        accepted: {
-          backgroundColor: { value: "{colors.background.success}" },
-          borderRadius: { value: "{components.dropzone.borderRadius}" },
-          borderColor: { value: "{colors.border.success}" },
-          borderStyle: { value: "{components.dropzone.borderStyle}" },
-          borderWidth: { value: "{components.dropzone.borderWidth}" },
-          color: { value: "{colors.font.success}" },
-        },
-        rejected: {
-          backgroundColor: { value: "{colors.background.error}" },
-          borderRadius: { value: "{components.dropzone.borderRadius}" },
-          borderColor: { value: "{colors.border.pressed}" },
-          borderStyle: { value: "{components.dropzone.borderStyle}" },
-          borderWidth: { value: "{components.dropzone.borderWidth}" },
-          color: { value: "{colors.font.error}" },
-        },
-      },
       expander: {
         display: { value: "block" },
-        backgroundColor: { value: "{colors.background.primary.value}" },
+        backgroundColor: { value: "{colors.white.value}" },
         borderRadius: { value: "{radii.medium.value}" },
         boxShadow: { value: "{shadows.large.value}" },
         width: { value: "100%" },
@@ -1181,7 +485,6 @@ export default createTheme({
       field: {
         gap: { value: "{space.xs.value}" },
         fontSize: { value: "{fontSizes.medium.value}" },
-        flexDirection: { value: "column" },
         small: {
           gap: { value: "{space.xxxs.value}" },
           fontSize: { value: "{fontSizes.small.value}" },
@@ -1225,6 +528,10 @@ export default createTheme({
         },
         quiet: {
           borderStyle: { value: "none" },
+          borderBlockEnd: {
+            value:
+              "{borderWidths.small.value} solid {colors.border.primary.value}",
+          },
           borderInlineStart: { value: "none" },
           borderInlineEnd: { value: "none" },
           borderBlockStart: { value: "none" },
@@ -1236,7 +543,6 @@ export default createTheme({
                 offsetX: "0px",
                 offsetY: "1px",
                 color: "{colors.border.focus.value}",
-                blurRadius: "0px",
               },
             },
           },
@@ -1248,7 +554,6 @@ export default createTheme({
                   offsetX: "0px",
                   offsetY: "1px",
                   color: "{colors.border.error.value}",
-                  blurRadius: "0px",
                 },
               },
             },
@@ -1274,7 +579,6 @@ export default createTheme({
         },
         _error: {
           borderColor: { value: "{colors.border.error.value}" },
-          color: { value: "{colors.font.error.value}" },
           _focus: {
             boxShadow: {
               value: {
@@ -1289,7 +593,7 @@ export default createTheme({
         },
       },
       fieldgroup: {
-        gap: { value: "{space.zero.value}" },
+        gap: { value: "0" },
         vertical: { alignItems: { value: "center" } },
         outer: { alignItems: { value: "center" } },
       },
@@ -1302,130 +606,6 @@ export default createTheme({
           color: { value: "{colors.font.secondary.value}" },
           fontStyle: { value: "italic" },
           fontSize: { value: "{fontSizes.small.value}" },
-        },
-      },
-      fieldset: {
-        backgroundColor: { value: "transparent" },
-        borderRadius: { value: "{radii.xs.value}" },
-        flexDirection: { value: "column" },
-        gap: { value: "{components.field.gap.value}" },
-        legend: {
-          color: { value: "{colors.font.primary.value}" },
-          fontSize: { value: "{components.field.fontSize.value}" },
-          fontWeight: { value: "{fontWeights.bold.value}" },
-          lineHeight: { value: "{lineHeights.medium.value}" },
-          small: {
-            fontSize: { value: "{components.field.small.fontSize.value}" },
-          },
-          large: {
-            fontSize: { value: "{components.field.large.fontSize.value}" },
-          },
-        },
-        outlined: {
-          padding: { value: "{space.medium.value}" },
-          borderColor: { value: "{colors.neutral.40.value}" },
-          borderWidth: { value: "{borderWidths.small.value}" },
-          borderStyle: { value: "solid" },
-          small: { padding: { value: "{space.small.value}" } },
-          large: { padding: { value: "{space.large.value}" } },
-        },
-        small: { gap: { value: "{components.field.small.gap.value}" } },
-        large: { gap: { value: "{components.field.large.gap.value}" } },
-      },
-      fileuploader: {
-        dropzone: {
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderRadius: { value: "{radii.small}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderStyle: { value: "dashed" },
-          borderWidth: { value: "{borderWidths.small}" },
-          gap: { value: "{space.small}" },
-          paddingBlock: { value: "{space.xl}" },
-          paddingInline: { value: "{space.large}" },
-          textAlign: { value: "center" },
-          _active: {
-            backgroundColor: { value: "{colors.brand.primary.10}" },
-            borderRadius: {
-              value: "{components.fileuploader.dropzone.borderRadius}",
-            },
-            borderColor: { value: "{colors.border.pressed}" },
-            borderStyle: {
-              value: "{components.fileuploader.dropzone.borderStyle}",
-            },
-            borderWidth: { value: "{borderWidths.medium}" },
-          },
-          icon: {
-            color: { value: "{colors.border.primary}" },
-            fontSize: { value: "{fontSizes.xxl}" },
-          },
-          text: {
-            color: { value: "{colors.font.tertiary}" },
-            fontSize: { value: "{fontSizes.medium}" },
-            fontWeight: { value: "{fontWeights.bold}" },
-          },
-        },
-        file: {
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderRadius: { value: "{radii.small}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderStyle: { value: "solid" },
-          borderWidth: { value: "{borderWidths.small}" },
-          paddingBlock: { value: "{space.xs}" },
-          paddingInline: { value: "{space.small}" },
-          gap: { value: "{space.small}" },
-          alignItems: { value: "baseline" },
-          name: {
-            fontSize: { value: "{fontSizes.medium}" },
-            fontWeight: { value: "{fontWeights.bold}" },
-            color: { value: "{colors.font.primary}" },
-          },
-          size: {
-            fontSize: { value: "{fontSizes.small}" },
-            fontWeight: { value: "{fontWeights.normal}" },
-            color: { value: "{colors.font.tertiary}" },
-          },
-          image: {
-            width: { value: "{space.xxl}" },
-            height: { value: "{space.xxl}" },
-            backgroundColor: { value: "{colors.background.secondary}" },
-            color: { value: "{colors.font.tertiary}" },
-            borderRadius: { value: "{radii.small}" },
-          },
-        },
-        loader: {
-          strokeLinecap: { value: "round" },
-          strokeEmpty: { value: "{colors.border.secondary}" },
-          strokeFilled: { value: "{components.loader.strokeFilled}" },
-          strokeWidth: { value: "{borderWidths.large}" },
-        },
-        previewer: {
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderStyle: { value: "solid" },
-          borderWidth: { value: "{borderWidths.small}" },
-          borderRadius: { value: "{radii.small}" },
-          paddingBlock: { value: "{space.zero}" },
-          paddingInline: { value: "{space.zero}" },
-          maxHeight: { value: "40rem" },
-          maxWidth: { value: "auto" },
-          text: {
-            fontSize: { value: "{fontSizes.medium}" },
-            fontWeight: { value: "{fontWeights.bold}" },
-            color: { value: "{colors.font.primary}" },
-          },
-          body: {
-            paddingBlock: { value: "{space.medium}" },
-            paddingInline: { value: "{space.medium}" },
-            gap: { value: "{space.small}" },
-          },
-          footer: {
-            borderColor: { value: "{colors.border.secondary}" },
-            borderStyle: { value: "solid" },
-            borderWidth: { value: "{borderWidths.small}" },
-            paddingBlock: { value: "{space.medium}" },
-            paddingInline: { value: "{space.medium}" },
-            justifyContent: { value: "space-between" },
-          },
         },
       },
       flex: {
@@ -1464,52 +644,20 @@ export default createTheme({
         lineHeight: { value: "{lineHeights.small.value}" },
       },
       icon: { lineHeight: { value: "1" }, height: { value: "1em" } },
-      highlightmatch: {
-        highlighted: { fontWeight: { value: "{fontWeights.bold}" } },
-      },
       image: {
         maxWidth: { value: "100%" },
         height: { value: "auto" },
         objectFit: { value: "initial" },
         objectPosition: { value: "initial" },
       },
-      inappmessaging: {
-        banner: { height: { value: "150px " }, width: { value: "400px " } },
-        button: {
-          backgroundColor: { value: "#e8e8e8" },
-          borderRadius: { value: "5px" },
-          color: { value: "black" },
-        },
-        dialog: {
-          height: { value: "50vh" },
-          minHeight: { value: "400px" },
-          minWidth: { value: "400px" },
-          width: { value: "30vw" },
-        },
-        header: {
-          fontSize: { value: "{fontSizes.medium.value}" },
-          fontWeight: { value: "{fontWeights.extrabold.value}" },
-        },
-      },
-      input: {
-        color: { value: "{components.fieldcontrol.color.value}" },
-        borderColor: { value: "{components.fieldcontrol.borderColor.value}" },
-        fontSize: { value: "{components.fieldcontrol.fontSize.value}" },
-        _focus: {
-          borderColor: {
-            value: "{components.fieldcontrol._focus.borderColor.value}",
-          },
-        },
-      },
       link: {
         active: { color: { value: "{colors.font.active.value}" } },
         color: { value: "{colors.font.interactive.value}" },
         focus: { color: { value: "{colors.font.focus.value}" } },
         hover: { color: { value: "{colors.font.hover.value}" } },
+        large: { fontSize: { value: "{fontSizes.large.value}" } },
+        small: { fontSize: { value: "{fontSizes.small.value}" } },
         visited: { color: { value: "{colors.font.interactive.value}" } },
-      },
-      liveness: {
-        cameraModule: { backgroundColor: { value: "{colors.black}" } },
       },
       loader: {
         width: { value: "{fontSizes.medium.value}" },
@@ -1532,32 +680,32 @@ export default createTheme({
         linear: {
           width: { value: "100%" },
           minWidth: { value: "5rem" },
-          fontSize: { value: "{fontSizes.xxs.value}" },
-          strokeWidth: { value: "{fontSizes.xxs.value}" },
+          fontSize: { value: "{fontSizes.medium.value}" },
+          strokeWidth: { value: "{fontSizes.medium.value}" },
           strokeFilled: { value: "{colors.brand.primary.80.value}" },
           strokeEmpty: { value: "{colors.neutral.20.value}" },
           strokeLinecap: { value: "round" },
           animationDuration: { value: "1s" },
           small: {
-            strokeWidth: { value: "{fontSizes.xxxs.value}" },
-            fontSize: { value: "{fontSizes.xxxs.value}" },
+            strokeWidth: { value: "{fontSizes.small.value}" },
+            fontSize: { value: "{fontSizes.small.value}" },
           },
           large: {
-            strokeWidth: { value: "{fontSizes.xs.value}" },
-            fontSize: { value: "{fontSizes.xs.value}" },
+            strokeWidth: { value: "{fontSizes.large.value}" },
+            fontSize: { value: "{fontSizes.large.value}" },
           },
         },
         text: { fill: { value: "{colors.font.primary.value}" } },
       },
       menu: {
-        backgroundColor: { value: "{colors.background.primary.value}" },
+        backgroundColor: { value: "{colors.white.value}" },
         borderRadius: { value: "{radii.medium.value}" },
         borderWidth: { value: "{borderWidths.small.value}" },
         borderStyle: { value: "solid" },
         borderColor: { value: "{colors.border.primary.value}" },
         boxShadow: { value: "{shadows.large.value}" },
         flexDirection: { value: "column" },
-        gap: { value: "{space.zero.value}" },
+        gap: { value: "0" },
         maxWidth: { value: "30rem" },
         minWidth: { value: "14rem" },
         small: {
@@ -1574,105 +722,11 @@ export default createTheme({
           paddingInlineEnd: { value: "{space.medium.value}" },
         },
       },
-      message: {
-        alignItems: { value: "center" },
-        backgroundColor: { value: "{colors.background.tertiary.value}" },
-        borderColor: { value: "transparent" },
-        borderStyle: { value: "solid" },
-        borderWidth: { value: "{borderWidths.small.value}" },
-        borderRadius: { value: "{radii.xs.value}" },
-        color: { value: "{colors.font.primary.value}" },
-        justifyContent: { value: "flex-start" },
-        paddingBlock: { value: "{space.small.value}" },
-        paddingInline: { value: "{space.medium.value}" },
-        lineHeight: { value: "{lineHeights.small.value}" },
-        icon: { size: { value: "{fontSizes.xl.value}" } },
-        heading: {
-          fontSize: { value: "{fontSizes.medium.value}" },
-          fontWeight: { value: "{fontWeights.bold.value}" },
-        },
-        dismiss: { gap: { value: "{space.xxs.value}" } },
-        plain: {
-          color: { value: "{colors.font.primary.value}" },
-          backgroundColor: { value: "{colors.background.primary.value}" },
-          borderColor: { value: "transparent" },
-          info: {
-            color: { value: "{colors.font.info.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "transparent" },
-          },
-          error: {
-            color: { value: "{colors.font.error.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "transparent" },
-          },
-          success: {
-            color: { value: "{colors.font.success.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "transparent" },
-          },
-          warning: {
-            color: { value: "{colors.font.warning.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "transparent" },
-          },
-        },
-        outlined: {
-          color: { value: "{colors.font.primary.value}" },
-          backgroundColor: { value: "{colors.background.primary.value}" },
-          borderColor: { value: "{colors.border.primary.value}" },
-          info: {
-            color: { value: "{colors.font.info.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "{colors.border.info.value}" },
-          },
-          error: {
-            color: { value: "{colors.font.error.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "{colors.border.error.value}" },
-          },
-          success: {
-            color: { value: "{colors.font.success.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "{colors.border.success.value}" },
-          },
-          warning: {
-            color: { value: "{colors.font.warning.value}" },
-            backgroundColor: { value: "{colors.background.primary.value}" },
-            borderColor: { value: "{colors.border.warning.value}" },
-          },
-        },
-        filled: {
-          color: { value: "{colors.font.primary.value}" },
-          backgroundColor: { value: "{colors.background.secondary.value}" },
-          borderColor: { value: "transparent" },
-          info: {
-            color: { value: "{colors.font.info.value}" },
-            backgroundColor: { value: "{colors.background.info.value}" },
-            borderColor: { value: "transparent" },
-          },
-          error: {
-            color: { value: "{colors.font.error.value}" },
-            backgroundColor: { value: "{colors.background.error.value}" },
-            borderColor: { value: "transparent" },
-          },
-          success: {
-            color: { value: "{colors.font.success.value}" },
-            backgroundColor: { value: "{colors.background.success.value}" },
-            borderColor: { value: "transparent" },
-          },
-          warning: {
-            color: { value: "{colors.font.warning.value}" },
-            backgroundColor: { value: "{colors.background.warning.value}" },
-            borderColor: { value: "transparent" },
-          },
-        },
-      },
       pagination: {
         current: {
           alignItems: { value: "center" },
           justifyContent: { value: "center" },
-          color: { value: "{colors.font.inverse.value}" },
+          color: { value: "{colors.white.value}" },
           fontSize: { value: "{fontSizes.small.value}" },
           backgroundColor: { value: "{colors.overlay.40.value}" },
         },
@@ -1704,58 +758,7 @@ export default createTheme({
           borderRadius: { value: "{fontSizes.medium.value}" },
         },
       },
-      passwordfield: {
-        color: { value: "{components.fieldcontrol.color.value}" },
-        button: {
-          color: { value: "{components.button.color.value}" },
-          _active: {
-            backgroundColor: {
-              value: "{components.button._active.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._active.borderColor.value}",
-            },
-            color: { value: "{components.button._active.color.value}" },
-          },
-          _disabled: {
-            backgroundColor: {
-              value: "{components.button._disabled.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._disabled.borderColor.value}",
-            },
-            color: { value: "{components.button._disabled.color.value}" },
-          },
-          _focus: {
-            backgroundColor: {
-              value: "{components.button._focus.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._focus.borderColor.value}",
-            },
-            color: { value: "{components.button._focus.color.value}" },
-          },
-          _hover: {
-            backgroundColor: {
-              value: "{components.button._hover.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._hover.borderColor.value}",
-            },
-            color: { value: "{components.button._hover.color.value}" },
-          },
-        },
-      },
-      phonenumberfield: {
-        color: { value: "{components.fieldcontrol.color}" },
-        borderColor: { value: "{components.fieldcontrol.borderColor}" },
-        fontSize: { value: "{components.fieldcontrol.fontSize}" },
-        _focus: {
-          borderColor: {
-            value: "{components.fieldcontrol._focus.borderColor}",
-          },
-        },
-      },
+      phonenumberfield: {},
       placeholder: {
         borderRadius: { value: "{radii.small.value}" },
         transitionDuration: { value: "{time.long.value}" },
@@ -1780,8 +783,8 @@ export default createTheme({
           borderStyle: { value: "solid" },
           borderRadius: { value: "50%" },
           borderColor: { value: "{colors.border.primary.value}" },
-          color: { value: "{colors.background.primary.value}" },
-          backgroundColor: { value: "{colors.background.primary.value}" },
+          color: { value: "{colors.white.value}" },
+          backgroundColor: { value: "{colors.white.value}" },
           transitionProperty: { value: "all" },
           transitionDuration: { value: "{time.medium.value}" },
           outlineColor: { value: "{colors.transparent.value}" },
@@ -1824,23 +827,8 @@ export default createTheme({
           },
         },
         label: {
-          color: { value: "{components.text.color.value}" },
           _disabled: { color: { value: "{colors.font.disabled.value}" } },
         },
-      },
-      radiogroup: {
-        radio: {
-          borderWidth: { value: "{components.radio.button.borderWidth}" },
-          borderColor: { value: "{components.radio.button.borderColor}" },
-          backgroundColor: {
-            value: "{components.radio.button.backgroundColor}",
-          },
-          _checked: {
-            color: { value: "{components.radio.button._checked.color}" },
-          },
-          label: { color: { value: "{components.radio.label.color}" } },
-        },
-        label: { color: { value: "{components.field.label.color}" } },
       },
       rating: {
         large: { size: { value: "{fontSizes.xxxl.value}" } },
@@ -1849,57 +837,8 @@ export default createTheme({
         filled: { color: { value: "{colors.brand.secondary.80.value}" } },
         empty: { color: { value: "{colors.background.tertiary.value}" } },
       },
-      searchfield: {
-        color: { value: "{components.fieldcontrol.color.value}" },
-        button: {
-          color: { value: "{components.button.color.value}" },
-          backgroundColor: { value: "{colors.background.primary.value}" },
-          _active: {
-            backgroundColor: {
-              value: "{components.button._active.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._active.borderColor.value}",
-            },
-            color: { value: "{components.button._active.color.value}" },
-          },
-          _disabled: {
-            backgroundColor: {
-              value: "{components.button._disabled.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._disabled.borderColor.value}",
-            },
-            color: { value: "{components.button._disabled.color.value}" },
-          },
-          _focus: {
-            backgroundColor: {
-              value: "{components.button._focus.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._focus.borderColor.value}",
-            },
-            color: { value: "{components.button._focus.color.value}" },
-          },
-          _hover: {
-            backgroundColor: {
-              value: "{components.button._hover.backgroundColor.value}",
-            },
-            borderColor: {
-              value: "{components.button._hover.borderColor.value}",
-            },
-            color: { value: "{components.button._hover.color.value}" },
-          },
-        },
-      },
       select: {
-        color: { value: "{components.fieldcontrol.color}" },
-        backgroundColor: { value: "{colors.background.primary.value}" },
         paddingInlineEnd: { value: "{space.xxl.value}" },
-        _disabled: {
-          color: { value: "{colors.font.disabled.value}" },
-          backgroundColor: { value: "{colors.background.disabled.value}" },
-        },
         wrapper: {
           flex: { value: "1" },
           display: { value: "block" },
@@ -1913,52 +852,20 @@ export default createTheme({
           right: { value: "{space.medium.value}" },
           transform: { value: "translateY(-50%)" },
           pointerEvents: { value: "none" },
-          small: { right: { value: "{space.xs.value}" } },
-          large: { right: { value: "{space.medium.value}" } },
         },
         option: {
-          backgroundColor: { value: "transparent" },
-          color: { value: "{colors.font.primary.value}" },
-          _disabled: {
-            color: { value: "{colors.font.disabled.value}" },
-            backgroundColor: { value: "transparent" },
-          },
+          backgroundColor: { value: "{colors.background.primary.value}" },
         },
         whiteSpace: { value: "nowrap" },
         minWidth: { value: "6.5rem" },
-        small: {
-          minWidth: { value: "5.5rem" },
-          paddingInlineEnd: { value: "{space.xl.value}" },
-        },
-        large: {
-          minWidth: { value: "7.5rem" },
-          paddingInlineEnd: { value: "{space.xxl.value}" },
-        },
-        expanded: {
-          paddingBlock: { value: "{space.xs.value}" },
-          paddingInline: { value: "{space.small.value}" },
-          option: {
-            paddingBlock: { value: "{space.xs.value}" },
-            paddingInline: { value: "{space.small.value}" },
-          },
-        },
+        small: { minWidth: { value: "5.5rem" } },
+        large: { minWidth: { value: "7.5rem" } },
       },
-      selectfield: {
-        borderColor: { value: "{components.fieldcontrol.borderColor}" },
-        color: { value: "{components.fieldcontrol.color}" },
-        flexDirection: { value: "column" },
-        fontSize: { value: "{components.fieldcontrol.fontSize}" },
-        _focus: {
-          borderColor: {
-            value: "{components.fieldcontrol._focus.borderColor}",
-          },
-        },
-        label: { color: { value: "{components.field.label.color}" } },
-      },
+      selectfield: { flexDirection: { value: "column" } },
       sliderfield: {
         paddingBlock: { value: "{space.xs.value}" },
         track: {
-          backgroundColor: { value: "{colors.background.quaternary.value}" },
+          backgroundColor: { value: "{colors.background.tertiary.value}" },
           borderRadius: { value: "9999px" },
           height: { value: "0.375rem" },
           minWidth: { value: "10rem" },
@@ -1976,7 +883,7 @@ export default createTheme({
           backgroundColor: { value: "{colors.background.primary.value}" },
           boxShadow: { value: "{shadows.small.value}" },
           borderRadius: { value: "50%" },
-          borderWidth: { value: "{borderWidths.medium.value}" },
+          borderWidth: { value: "{borderWidths.small.value}" },
           borderColor: { value: "{colors.border.primary.value}" },
           borderStyle: { value: "solid" },
           _disabled: {
@@ -1989,13 +896,12 @@ export default createTheme({
             borderColor: { value: "{colors.border.focus.value}" },
           },
           _focus: {
-            borderColor: { value: "{colors.border.focus.value}" },
             boxShadow: {
               value: {
                 offsetX: "0",
                 offsetY: "0",
                 blurRadius: "0",
-                spreadRadius: "2px",
+                spreadRadius: "3px",
                 color: "{colors.border.focus.value}",
               },
             },
@@ -2011,175 +917,33 @@ export default createTheme({
         },
       },
       stepperfield: {
-        borderColor: { value: "{components.fieldcontrol.borderColor}" },
         flexDirection: { value: "column" },
-        input: {
-          color: { value: "{components.fieldcontrol.color}" },
-          fontSize: { value: "{components.fieldcontrol.fontSize}" },
-          textAlign: { value: "center" },
-        },
-        button: {
-          color: { value: "{components.button.color}" },
-          backgroundColor: { value: "{colors.transparent}" },
-          _active: {
-            color: { value: "{components.button._active.color}" },
-            backgroundColor: {
-              value: "{components.button._active.backgroundColor}",
-            },
-          },
-          _focus: {
-            color: { value: "{components.button._focus.color}" },
-            backgroundColor: {
-              value: "{components.button._focus.backgroundColor}",
-            },
-          },
-          _disabled: {
-            color: { value: "{components.button._disabled.color}" },
-            backgroundColor: {
-              value: "{components.fieldcontrol._disabled.backgroundColor}",
-            },
-          },
-          _hover: {
-            color: { value: "{components.button._hover.color}" },
-            backgroundColor: {
-              value: "{components.button._hover.backgroundColor}",
-            },
-          },
-        },
-      },
-      storagemanager: {
-        dropzone: {
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderRadius: { value: "{radii.small}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderStyle: { value: "dashed" },
-          borderWidth: { value: "{borderWidths.small}" },
-          gap: { value: "{space.small}" },
-          paddingBlock: { value: "{space.xl}" },
-          paddingInline: { value: "{space.large}" },
-          textAlign: { value: "center" },
-          _active: {
-            backgroundColor: { value: "{colors.brand.primary.10}" },
-            borderRadius: {
-              value: "{components.fileuploader.dropzone.borderRadius}",
-            },
-            borderColor: { value: "{colors.border.pressed}" },
-            borderStyle: {
-              value: "{components.fileuploader.dropzone.borderStyle}",
-            },
-            borderWidth: { value: "{borderWidths.medium}" },
-          },
-          icon: {
-            color: { value: "{colors.border.primary}" },
-            fontSize: { value: "{fontSizes.xxl}" },
-          },
-          text: {
-            color: { value: "{colors.font.tertiary}" },
-            fontSize: { value: "{fontSizes.medium}" },
-            fontWeight: { value: "{fontWeights.bold}" },
-          },
-        },
-        file: {
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderRadius: { value: "{radii.small}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderStyle: { value: "solid" },
-          borderWidth: { value: "{borderWidths.small}" },
-          paddingBlock: { value: "{space.xs}" },
-          paddingInline: { value: "{space.small}" },
-          gap: { value: "{space.small}" },
-          alignItems: { value: "baseline" },
-          name: {
-            fontSize: { value: "{fontSizes.medium}" },
-            fontWeight: { value: "{fontWeights.bold}" },
-            color: { value: "{colors.font.primary}" },
-          },
-          size: {
-            fontSize: { value: "{fontSizes.small}" },
-            fontWeight: { value: "{fontWeights.normal}" },
-            color: { value: "{colors.font.tertiary}" },
-          },
-          image: {
-            width: { value: "{space.xxl}" },
-            height: { value: "{space.xxl}" },
-            backgroundColor: { value: "{colors.background.secondary}" },
-            color: { value: "{colors.font.tertiary}" },
-            borderRadius: { value: "{radii.small}" },
-          },
-        },
-        loader: {
-          strokeLinecap: { value: "round" },
-          strokeEmpty: { value: "{colors.border.secondary}" },
-          strokeFilled: { value: "{components.loader.strokeFilled}" },
-          strokeWidth: { value: "{borderWidths.large}" },
-        },
-        previewer: {
-          backgroundColor: { value: "{colors.background.primary}" },
-          borderColor: { value: "{colors.border.primary}" },
-          borderStyle: { value: "solid" },
-          borderWidth: { value: "{borderWidths.small}" },
-          borderRadius: { value: "{radii.small}" },
-          paddingBlock: { value: "{space.zero}" },
-          paddingInline: { value: "{space.zero}" },
-          maxHeight: { value: "40rem" },
-          maxWidth: { value: "auto" },
-          text: {
-            fontSize: { value: "{fontSizes.medium}" },
-            fontWeight: { value: "{fontWeights.bold}" },
-            color: { value: "{colors.font.primary}" },
-          },
-          body: {
-            paddingBlock: { value: "{space.medium}" },
-            paddingInline: { value: "{space.medium}" },
-            gap: { value: "{space.small}" },
-          },
-          footer: { justifyContent: { value: "flex-end" } },
-        },
-        filelist: {
-          flexDirection: { value: "column" },
-          gap: { value: "{space.small}" },
-        },
+        input: { textAlign: { value: "center" } },
       },
       switchfield: {
-        _disabled: { opacity: { value: "{opacities.60.value}" } },
-        _focused: {
-          shadow: {
-            value: {
-              offsetX: "0px",
-              offsetY: "0px",
-              blurRadius: "0px",
-              spreadRadius: "2px",
-              color: "{colors.border.focus.value}",
-            },
-          },
-        },
-        fontSize: { value: "{fontSizes.medium.value}" },
+        disabled: { opacity: { value: "{opacities.60.value}" } },
+        focused: { shadow: { value: "{shadows.small.value}" } },
         large: { fontSize: { value: "{fontSizes.large.value}" } },
         small: { fontSize: { value: "{fontSizes.small.value}" } },
         label: { padding: { value: "{space.xs.value}" } },
         thumb: {
           backgroundColor: { value: "{colors.background.primary.value}" },
-          borderColor: { value: "transparent" },
-          borderWidth: { value: "{borderWidths.small.value}" },
-          borderStyle: { value: "solid" },
+          borderColor: { value: "{colors.border.tertiary.value}" },
           borderRadius: { value: "{radii.xxxl.value}" },
           checked: { transform: { value: "{transforms.slideX.medium.value}" } },
           transition: { duration: { value: "{time.medium.value}" } },
           width: { value: "{space.relative.medium.value}" },
         },
         track: {
-          backgroundColor: { value: "{colors.background.quaternary.value}" },
+          backgroundColor: { value: "{colors.background.tertiary.value}" },
           borderRadius: { value: "{radii.xxxl.value}" },
           checked: {
-            backgroundColor: { value: "{colors.brand.primary.80.value}" },
+            backgroundColor: { value: "{colors.brand.primary.60.value}" },
           },
           height: { value: "{space.relative.medium.value}" },
           padding: { value: "{outlineWidths.medium.value}" },
           transition: { duration: { value: "{time.short.value}" } },
           width: { value: "{space.relative.xl.value}" },
-          _error: {
-            backgroundColor: { value: "{colors.background.error.value}" },
-          },
         },
       },
       table: {
@@ -2299,41 +1063,21 @@ export default createTheme({
         success: { color: { value: "{colors.font.success.value}" } },
         info: { color: { value: "{colors.font.info.value}" } },
       },
-      textareafield: {
-        color: { value: "{components.fieldcontrol.color.value}" },
-        borderColor: { value: "{components.fieldcontrol.borderColor.value}" },
-        _focus: {
-          borderColor: {
-            value: "{components.fieldcontrol._focus.borderColor.value}",
-          },
-        },
-      },
-      textfield: {
-        color: { value: "{components.fieldcontrol.color.value}" },
-        borderColor: { value: "{components.fieldcontrol.borderColor.value}" },
-        fontSize: { value: "{components.fieldcontrol.fontSize.value}" },
-        _focus: {
-          borderColor: {
-            value: "{components.fieldcontrol._focus.borderColor.value}",
-          },
-        },
-      },
       togglebutton: {
         borderColor: { value: "{colors.border.primary.value}" },
-        color: { value: "{colors.font.primary.value}" },
+        color: { value: "{colors.overlay.50.value}" },
         _hover: { backgroundColor: { value: "{colors.overlay.10.value}" } },
         _focus: {
           borderColor: { value: "{colors.border.focus.value}" },
-          color: { value: "{colors.font.primary.value}" },
+          color: { value: "{colors.overlay.50.value}" },
         },
         _active: { backgroundColor: { value: "{colors.transparent.value}" } },
         _disabled: {
           backgroundColor: { value: "{colors.transparent.value}" },
-          borderColor: { value: "{colors.border.disabled.value}" },
+          borderColor: { value: "{colors.border.secondary.value}" },
           color: { value: "{colors.font.disabled.value}" },
         },
         _pressed: {
-          borderColor: { value: "{colors.border.pressed.value}" },
           color: { value: "{colors.font.primary.value}" },
           backgroundColor: { value: "{colors.overlay.20.value}" },
           _hover: { backgroundColor: { value: "{colors.overlay.30.value}" } },
@@ -2347,36 +1091,31 @@ export default createTheme({
             boxShadow: {
               value: "{components.fieldcontrol._focus.boxShadow.value}",
             },
-            color: { value: "{colors.font.primary.value}" },
+            color: { value: "{colors.overlay.50.value}" },
           },
           _hover: {
             backgroundColor: { value: "{colors.overlay.10.value}" },
-            color: { value: "{colors.font.primary.value}" },
+            color: { value: "{colors.overlay.50.value}" },
           },
           _disabled: {
-            borderColor: { value: "{colors.border.disabled.value}" },
-            backgroundColor: { value: "{colors.background.disabled.value}" },
+            backgroundColor: { value: "{colors.background.tertiary.value}" },
             color: { value: "{colors.font.disabled.value}" },
           },
           _pressed: {
             backgroundColor: { value: "{colors.brand.primary.80.value}" },
             borderColor: { value: "{colors.brand.primary.80.value}" },
-            color: { value: "{colors.background.primary.value}" },
+            color: { value: "{colors.white.value}" },
             _focus: {
               backgroundColor: { value: "{colors.border.focus.value}" },
               borderColor: { value: "{colors.border.focus.value}" },
-              color: { value: "{colors.background.primary.value}" },
             },
             _hover: {
               borderColor: { value: "{colors.brand.primary.60.value}" },
               backgroundColor: { value: "{colors.brand.primary.60.value}" },
-              boxShadow: { value: "{colors.brand.primary.60.value}" },
-              color: { value: "{colors.background.primary.value}" },
             },
           },
         },
         link: {
-          backgroundColor: { value: "{colors.transparent.value}" },
           color: { value: "{colors.overlay.50.value}" },
           _hover: {
             backgroundColor: { value: "{colors.transparent.value}" },
@@ -2386,19 +1125,11 @@ export default createTheme({
             backgroundColor: { value: "{colors.transparent.value}" },
             color: { value: "{colors.overlay.50.value}" },
           },
-          _disabled: {
-            backgroundColor: { value: "{colors.transparent.value}" },
-            color: { value: "{colors.font.disabled.value}" },
-          },
+          _disabled: { color: { value: "{colors.font.disabled.value}" } },
           _pressed: {
             backgroundColor: { value: "{colors.transparent.value}" },
             color: { value: "{colors.overlay.90.value}" },
-            _focus: {
-              backgroundColor: { value: "{colors.transparent.value}" },
-              color: { value: "{colors.overlay.90.value}" },
-            },
             _hover: {
-              color: { value: "{colors.overlay.90.value}" },
               backgroundColor: { value: "{colors.transparent.value}" },
             },
           },
@@ -2492,36 +1223,36 @@ export default createTheme({
         10: { value: "hsl(210, 5%, 98%)" },
         20: { value: "hsl(210, 5%, 94%)" },
         40: { value: "hsl(210, 5%, 87%)" },
-        60: { value: "hsl(210, 10%, 58%)" },
+        60: { value: "hsl(210, 6%, 70%)" },
         80: { value: "hsl(210, 10%, 40%)" },
         90: { value: "hsl(210, 25%, 25%)" },
         100: { value: "hsl(210, 50%, 10%)" },
       },
       brand: {
         primary: {
-          10: { value: "hsl(349, 43%, 69%)" },
-          20: { value: "hsl(349, 43%, 63%)" },
-          40: { value: "hsl(349, 43%, 50%)" },
-          60: { value: "hsl(349, 70%, 38%)" },
-          80: { value: "hsl(349, 70%, 30%)" },
-          90: { value: "hsl(349, 71%, 23%)" },
-          100: { value: "hsl(349, 69%, 19%)" },
+          10: { value: "{colors.red.10.value}" },
+          20: { value: "{colors.red.20.value}" },
+          40: { value: "{colors.red.40.value}" },
+          60: { value: "{colors.red.60.value}" },
+          80: { value: "{colors.red.80.value}" },
+          90: { value: "{colors.red.90.value}" },
+          100: { value: "{colors.red.100.value}" },
         },
         secondary: {
-          10: { value: "hsl(330, 2%, 80%)" },
-          20: { value: "hsl(0, 2%, 76%)" },
-          40: { value: "hsl(340, 2%, 68%)" },
-          60: { value: "hsl(345, 2%, 60%)" },
-          80: { value: "hsl(340, 1%, 48%)" },
-          90: { value: "hsl(0, 1%, 36%)" },
-          100: { value: "hsl(0, 1%, 30%)" },
+          10: { value: "{colors.neutral.10.value}" },
+          20: { value: "{colors.neutral.20.value}" },
+          40: { value: "{colors.neutral.40.value}" },
+          60: { value: "{colors.neutral.60.value}" },
+          80: { value: "{colors.neutral.80.value}" },
+          90: { value: "{colors.neutral.90.value}" },
+          100: { value: "{colors.neutral.100.value}" },
         },
       },
       font: {
         primary: { value: "{colors.neutral.100.value}" },
         secondary: { value: "{colors.neutral.90.value}" },
         tertiary: { value: "{colors.neutral.80.value}" },
-        disabled: { value: "{colors.neutral.60.value}" },
+        disabled: { value: "{colors.font.tertiary.value}" },
         inverse: { value: "{colors.white.value}" },
         interactive: { value: "{colors.brand.primary.80.value}" },
         hover: { value: "{colors.brand.primary.90.value}" },
@@ -2536,24 +1267,19 @@ export default createTheme({
         primary: { value: "{colors.white.value}" },
         secondary: { value: "{colors.neutral.10.value}" },
         tertiary: { value: "{colors.neutral.20.value}" },
-        quaternary: { value: "{colors.neutral.60.value}" },
         disabled: { value: "{colors.background.tertiary.value}" },
-        info: { value: "{colors.blue.10.value}" },
-        warning: { value: "{colors.orange.10.value}" },
-        error: { value: "{colors.red.10.value}" },
-        success: { value: "{colors.green.10.value}" },
+        info: { value: "{colors.blue.20.value}" },
+        warning: { value: "{colors.orange.20.value}" },
+        error: { value: "{colors.red.20.value}" },
+        success: { value: "{colors.green.20.value}" },
       },
       border: {
         primary: { value: "{colors.neutral.60.value}" },
         secondary: { value: "{colors.neutral.40.value}" },
         tertiary: { value: "{colors.neutral.20.value}" },
         disabled: { value: "{colors.border.tertiary.value}" },
-        pressed: { value: "{colors.brand.primary.100.value}" },
         focus: { value: "{colors.brand.primary.100.value}" },
         error: { value: "{colors.red.80.value}" },
-        info: { value: "{colors.blue.80.value}" },
-        success: { value: "{colors.green.80.value}" },
-        warning: { value: "{colors.orange.80.value}" },
       },
       shadow: {
         primary: { value: "hsla(210, 50%, 10%, 0.25)" },
@@ -2561,7 +1287,6 @@ export default createTheme({
         tertiary: { value: "hsla(210, 50%, 10%, 0.05)" },
       },
       overlay: {
-        5: { value: "hsla(0, 0%, 0%, 0.05)" },
         10: { value: "hsla(0, 0%, 0%, 0.1)" },
         20: { value: "hsla(0, 0%, 0%, 0.2)" },
         30: { value: "hsla(0, 0%, 0%, 0.3)" },

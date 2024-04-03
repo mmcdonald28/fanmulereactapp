@@ -91,8 +91,8 @@ export default function FormCheckout(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Shipping information"
-              {...getOverrideProps(overrides, "Shipping information")}
+              children="Sign up information"
+              {...getOverrideProps(overrides, "Sign up information")}
             ></Text>
             <Flex
               gap="24px"
@@ -285,20 +285,20 @@ export default function FormCheckout(props) {
           </Flex>
         </Flex>
         <Image
-          width="unset"
-          height="unset"
+          width="396px"
+          height="384px"
           display="block"
           gap="unset"
           alignItems="unset"
           justifyContent="unset"
-          grow="1"
-          shrink="1"
-          basis="0"
-          alignSelf="stretch"
+          shrink="0"
           position="relative"
+          border="1px SOLID rgba(0,0,0,1)"
+          boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+          borderRadius="4px"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          {...getOverrideProps(overrides, "image")}
+          {...getOverrideProps(overrides, "Logo")}
         ></Image>
       </Flex>
     </Flex>

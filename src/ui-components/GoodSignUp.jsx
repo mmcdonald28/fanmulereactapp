@@ -6,7 +6,9 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { UserProfile } from "../models";
+import { getOverrideProps, useAuth, useDataStoreCreateAction } from "./utils";
+import { schema } from "../models/schema";
 import {
   Button,
   Icon,
@@ -15,8 +17,18 @@ import {
   Text,
   View,
 } from "@aws-amplify/ui-react";
-export default function  (props) {
-  const { overrides, ...rest } = props;
+export default function GoodSignUp(props) {
+  const { UsernameField, overrides, ...rest } = props;
+  const authAttributes = useAuth().user?.attributes ?? {};
+  const rectangleOneFiveOnClick = useDataStoreCreateAction({
+    fields: {
+      Username: authAttributes["preferred_username"],
+      Email: authAttributes["email"],
+      Birthday: authAttributes["birthdate"],
+    },
+    model: UserProfile,
+    schema: schema,
+  });
   return (
     <View
       width="1480.2px"
@@ -336,9 +348,12 @@ export default function  (props) {
           bottom="60.82%"
           left="8.7%"
           right="8.99%"
+          onClick={() => {
+            rectangleOneFiveOnClick();
+          }}
           {...getOverrideProps(overrides, "Rectangle 15")}
         ></Icon>
-        <Image 
+        <Image
           width="39.42%"
           height="20.33%"
           display="block"

@@ -27,7 +27,7 @@
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
-        "mfaConfiguration": "ON",
+        "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS",
           "TOTP"

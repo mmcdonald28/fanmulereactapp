@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { UserProfile } from "../models";
 import { ButtonProps, IconProps, ImageProps, PasswordFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -37,6 +38,8 @@ export declare type GoodSignUpOverridesProps = {
     PasswordField?: PrimitiveOverrideProps<PasswordFieldProps>;
 } & EscapeHatchProps;
 export declare type GoodSignUpProps = React.PropsWithChildren<Partial<ViewProps> & {
+    UsernameField?: UserProfile;
+} & {
     overrides?: GoodSignUpOverridesProps | undefined | null;
 }>;
 export default function GoodSignUp(props: GoodSignUpProps): React.ReactElement;
