@@ -26,6 +26,7 @@ export { default as ItemCard } from "./ItemCard";
 export { default as Login } from "./Login";
 export { default as Logo } from "./Logo";
 export { default as LogoWithText } from "./LogoWithText";
+export { default as MainPage } from "./MainPage";
 export { default as MarketingFooter } from "./MarketingFooter";
 export { default as MarketingFooterBrand } from "./MarketingFooterBrand";
 export { default as MarketingPricing } from "./MarketingPricing";
