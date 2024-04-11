@@ -19,8 +19,8 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type MainPageOverridesProps = {
-    MainPage?: PrimitiveOverrideProps<FlexProps>;
+export declare type TFPageOverridesProps = {
+    TFPage?: PrimitiveOverrideProps<FlexProps>;
     NavBarHeader?: NavBarHeaderProps;
     "Example betting line39184447"?: ExamplebettinglineProps;
     "Example betting line39184475"?: ExamplebettinglineProps;
@@ -29,7 +29,7 @@ export declare type MainPageOverridesProps = {
     "Example betting line39184503"?: ExamplebettinglineProps;
     "Example betting line3930559"?: ExamplebettinglineProps;
 } & EscapeHatchProps;
-export declare type MainPageProps = React.PropsWithChildren<Partial<FlexProps> & {
-    overrides?: MainPageOverridesProps | undefined | null;
+export declare type TFPageProps = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: TFPageOverridesProps | undefined | null;
 }>;
-export default function MainPage(props: MainPageProps): React.ReactElement;
+export default function TFPage(props: TFPageProps): React.ReactElement;

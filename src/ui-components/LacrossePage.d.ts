@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { NavBarHeaderProps } from "./NavBarHeader";
-import { ExamplebettinglineProps } from "./Examplebettingline";
+import { TFPageProps } from "./TFPage";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -19,17 +18,11 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type MainPageOverridesProps = {
-    MainPage?: PrimitiveOverrideProps<FlexProps>;
-    NavBarHeader?: NavBarHeaderProps;
-    "Example betting line39184447"?: ExamplebettinglineProps;
-    "Example betting line39184475"?: ExamplebettinglineProps;
-    "Example betting line3930503"?: ExamplebettinglineProps;
-    "Example betting line39184489"?: ExamplebettinglineProps;
-    "Example betting line39184503"?: ExamplebettinglineProps;
-    "Example betting line3930559"?: ExamplebettinglineProps;
+export declare type LacrossePageOverridesProps = {
+    LacrossePage?: PrimitiveOverrideProps<FlexProps>;
+    LacrossePage39434810?: TFPageProps;
 } & EscapeHatchProps;
-export declare type MainPageProps = React.PropsWithChildren<Partial<FlexProps> & {
-    overrides?: MainPageOverridesProps | undefined | null;
+export declare type LacrossePageProps = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: LacrossePageOverridesProps | undefined | null;
 }>;
-export default function MainPage(props: MainPageProps): React.ReactElement;
+export default function LacrossePage(props: LacrossePageProps): React.ReactElement;

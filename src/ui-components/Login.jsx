@@ -34,8 +34,8 @@ export default function Login(props) {
     setErrors({});
   };
   const validations = {
-    Email: [{ type: "Email" }],
-    Password: [],
+    Email: [{ type: "Required" }, { type: "Email" }],
+    Password: [{ type: "Required" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -111,9 +111,14 @@ export default function Login(props) {
       {...rest}
     >
       <TextField
-        label="Email"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Email</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         descriptiveText="Enter the email associated with your account"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         value={Email}
         onChange={(e) => {
@@ -137,9 +142,14 @@ export default function Login(props) {
         {...getOverrideProps(overrides, "Email")}
       ></TextField>
       <TextField
-        label="Password"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Password</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         descriptiveText="Enter your password"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         value={Password}
         onChange={(e) => {

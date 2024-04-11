@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { LogoWithTextProps } from "./LogoWithText";
+import { FanMuleLogoProps } from "./FanMuleLogo";
 import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
 import { MyIconProps } from "./MyIcon";
 export declare type EscapeHatchProps = {
@@ -21,12 +21,12 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NavBarHeaderOverridesProps = {
     NavBarHeader?: PrimitiveOverrideProps<FlexProps>;
-    LogoWithText?: LogoWithTextProps;
+    FanMuleLogo?: FanMuleLogoProps;
     "Frame 32129767076"?: PrimitiveOverrideProps<FlexProps>;
-    Dashboard?: PrimitiveOverrideProps<TextProps>;
-    Jobs?: PrimitiveOverrideProps<TextProps>;
-    Applicants?: PrimitiveOverrideProps<TextProps>;
-    Company?: PrimitiveOverrideProps<TextProps>;
+    "Track and Field"?: PrimitiveOverrideProps<TextProps>;
+    Lacrosse?: PrimitiveOverrideProps<TextProps>;
+    Baseball?: PrimitiveOverrideProps<TextProps>;
+    Tennis?: PrimitiveOverrideProps<TextProps>;
     "Frame 32129767081"?: PrimitiveOverrideProps<FlexProps>;
     MyIcon?: MyIconProps;
     image?: PrimitiveOverrideProps<ImageProps>;

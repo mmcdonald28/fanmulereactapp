@@ -6,12 +6,28 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
-import LogoWithText from "./LogoWithText";
+import { getOverrideProps, useNavigateAction } from "./utils";
+import FanMuleLogo from "./FanMuleLogo";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function NavBarHeader(props) {
   const { overrides, ...rest } = props;
+  const trackandFieldOnClick = useNavigateAction({
+    type: "url",
+    url: "http://localhost:3005/track-and-field",
+  });
+  const lacrosseOnClick = useNavigateAction({
+    type: "url",
+    url: "http://localhost:3005/lacrosse",
+  });
+  const baseballOnClick = useNavigateAction({
+    type: "url",
+    url: "http://localhost:3005/baseball",
+  });
+  const tennisOnClick = useNavigateAction({
+    type: "url",
+    url: "http://localhost:3005/tennis",
+  });
   return (
     <Flex
       gap="40px"
@@ -27,9 +43,9 @@ export default function NavBarHeader(props) {
       {...getOverrideProps(overrides, "NavBarHeader")}
       {...rest}
     >
-      <LogoWithText
-        width="127.88px"
-        height="18.91px"
+      <FanMuleLogo
+        width="193px"
+        height="171px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -37,9 +53,8 @@ export default function NavBarHeader(props) {
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
-        color="brand"
-        {...getOverrideProps(overrides, "LogoWithText")}
-      ></LogoWithText>
+        {...getOverrideProps(overrides, "FanMuleLogo")}
+      ></FanMuleLogo>
       <Flex
         gap="40px"
         direction="row"
@@ -72,8 +87,11 @@ export default function NavBarHeader(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Dashboard"
-          {...getOverrideProps(overrides, "Dashboard")}
+          children="Track and Field"
+          onClick={() => {
+            trackandFieldOnClick();
+          }}
+          {...getOverrideProps(overrides, "Track and Field")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -93,8 +111,11 @@ export default function NavBarHeader(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Jobs"
-          {...getOverrideProps(overrides, "Jobs")}
+          children="Lacrosse"
+          onClick={() => {
+            lacrosseOnClick();
+          }}
+          {...getOverrideProps(overrides, "Lacrosse")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -114,8 +135,11 @@ export default function NavBarHeader(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Applicants"
-          {...getOverrideProps(overrides, "Applicants")}
+          children="Baseball"
+          onClick={() => {
+            baseballOnClick();
+          }}
+          {...getOverrideProps(overrides, "Baseball")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -135,8 +159,11 @@ export default function NavBarHeader(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Company"
-          {...getOverrideProps(overrides, "Company")}
+          children="Tennis"
+          onClick={() => {
+            tennisOnClick();
+          }}
+          {...getOverrideProps(overrides, "Tennis")}
         ></Text>
       </Flex>
       <Flex

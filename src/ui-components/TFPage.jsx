@@ -10,7 +10,7 @@ import { getOverrideProps } from "./utils";
 import NavBarHeader from "./NavBarHeader";
 import Examplebettingline from "./Examplebettingline";
 import { Flex } from "@aws-amplify/ui-react";
-export default function MainPage(props) {
+export default function TFPage(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
@@ -23,7 +23,7 @@ export default function MainPage(props) {
       position="relative"
       padding="80px 80px 80px 80px"
       backgroundColor="rgba(255,255,255,1)"
-      {...getOverrideProps(overrides, "MainPage")}
+      {...getOverrideProps(overrides, "TFPage")}
       {...rest}
     >
       <NavBarHeader

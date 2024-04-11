@@ -1,8 +1,8 @@
 type UserProfile @model @auth(rules: [{allow: public}]) {
   id: ID!
-  Username: String
-  Email: AWSEmail
-  Password: String
+  Username: String!
+  Email: AWSEmail!
+  Password: String!
   Balance: Float
   Bets: [Bets] @hasMany(indexName: "byUserProfile", fields: ["id"])
   Transactions: [Transactions] @hasMany(indexName: "byUserProfile", fields: ["id"])
@@ -11,34 +11,35 @@ type UserProfile @model @auth(rules: [{allow: public}]) {
 
 type SportingEvent @model @auth(rules: [{allow: public}]) {
   id: ID!
-  Sport: String
-  EventDate: AWSDate
-  EventTime: AWSTime
-  Location: String
-  Odds: Int
-  Result: String
-  TeamsParticipating: String
+  Sport: String!
+  EventDate: AWSDate!
+  EventTime: AWSTime!
+  Location: String!
+  Odds: Int!
+  Result: String!
+  TeamsParticipating: String!
   betsID: ID! @index(name: "byBets")
 }
 
 type Bets @model @auth(rules: [{allow: public}]) {
   id: ID!
-  UserID: String
-  EventID: String
-  BetAmount: Float
-  BetType: String
-  ChosenTeam: String
-  TimePlaced: AWSTime
-  TimeStamp: AWSTimestamp
+  UserID: String!
+  EventID: String!
+  BetAmount: Float!
+  BetType: String!
+  ChosenTeam: String!
+  TimePlaced: AWSTime!
+  TimeStamp: AWSTimestamp!
   userprofileID: ID! @index(name: "byUserProfile")
   SportingEvents: [SportingEvent] @hasMany(indexName: "byBets", fields: ["id"])
 }
 
 type Transactions @model @auth(rules: [{allow: public}]) {
   id: ID!
-  UserID: String
-  Amount: String
-  Type: String
-  TimeStamp: AWSTimestamp
+  UserID: String!
+  Amount: String!
+  Type: String!
+  TimeStamp: AWSTimestamp!
   userprofileID: ID! @index(name: "byUserProfile")
 }
+ 
