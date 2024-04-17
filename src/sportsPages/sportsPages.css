@@ -1,0 +1,23 @@
+/* LacrossePage-specific styles */
+.betting-lines {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px; /* Adjust this value to fit your design */
+  }
+  
+  
+  .betting-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .sport-logo {
+    margin-right: 10px;
+  }
+  
+  .bet-description {
+    flex-grow: 1;
+  }
