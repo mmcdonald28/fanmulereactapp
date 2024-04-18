@@ -3,10 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "@aws-amplify/ui-react/styles.css";
 import Navbar from './navBar';
+import MensLacrossePage from './sportsPages/MensLacrossePage';
+import WomensLacrossePage from './sportsPages/WomensLacrossePage';
 import BaseballPage from './sportsPages/BaseballPage';
-import LacrossePage from './sportsPages/LacrossePage';
+import SoftballPage from './sportsPages/SoftballPage';
 import TennisPage from './sportsPages/TennisPage';
 import TFPage from './sportsPages/TFPage';
+import HomePage from './HomePage';
 import {
   withAuthenticator,
   Button,
@@ -18,7 +21,6 @@ import {
 
 function Home({ signOut }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -27,12 +29,14 @@ function Home({ signOut }) {
     <Router>
       <div className="App">
         <Navbar signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />
-        
         <Routes>
-          <Route path="/lacrosse" element={<LacrossePage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
-          <Route path="/trackandfield" element={<TFPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/menslacrosse" element={<MensLacrossePage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
+          <Route path="/womenslacrosse" element={<WomensLacrossePage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
           <Route path="/baseball" element={<BaseballPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
+          <Route path="/softball" element={<SoftballPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
           <Route path="/tennis" element={<TennisPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
+          <Route path="/trackandfield" element={<TFPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
         </Routes>
       </div>
     </Router>

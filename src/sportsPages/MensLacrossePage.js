@@ -4,7 +4,6 @@ import mensLacrosseLogo from '../images/lacrosse-logo.jpeg';  // Updated logo im
 import '../App.css'; // Import App.css for navbar styles
 import './sportsPages.css'; // Import sportPage-specific styles
 import '../button.css'; // Import the button styles
-
 import Navbar from '../navBar';
 
 function MensLacrossePage({ signOut, toggleDropdown, dropdownOpen }) {  // Updated component name

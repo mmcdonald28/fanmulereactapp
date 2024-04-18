@@ -1,0 +1,19 @@
+.button {
+    background-color: transparent; /* Make the button background transparent */
+    color: #000000; /* Set the button text color to black */
+    padding: 10px 20px;
+    border: 1px solid #000000; /* Add a black outline */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #dc3545; /* Red color on hover */
+    color: #ffffff; /* Change the text color to white on hover */
+  }
+  
+  .button.active {
+    background-color: #dc3545; /* Blue color when the button is clicked */
+    color: #ffffff; /* Change the text color to white when the button is clicked */
+  }
