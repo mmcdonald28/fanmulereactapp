@@ -19,6 +19,9 @@
   }
   
   .bet-description {
+    /* justify-content: start; */
+    text-align: left;
+    float: left;
     flex-grow: 1;
   }
   .betting-options {
@@ -34,9 +37,7 @@
 
   .betting-line-item {
     display: flex;
-    justify-content: space-between; /* Space between the two child divs */
-    align-items: center; /* Vertically center align items */
-    margin-bottom: 10px; /* Space between each betting line item, adjust as needed */
+    align-items: center; /* Aligns the grid items vertically */
     padding-left: 10px;
     padding-right: 10px;
   }
