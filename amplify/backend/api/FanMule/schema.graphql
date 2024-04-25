@@ -14,11 +14,18 @@ type SportingEvent @model @auth(rules: [{allow: public}]) {
   Sport: String!
   EventDate: AWSDate!
   EventTime: AWSTime!
-  Location: String!
-  Odds: Int!
   Result: String!
-  TeamsParticipating: String!
   betsID: ID! @index(name: "byBets")
+  Home: String
+  Away: String
+  HomeML: String
+  AwayML: String
+  HomeSP: String
+  AwaySP: String
+  HomeSPodds: String
+  AwaySPodds: String
+  ouLine: Float
+  ouOdds: String
 }
 
 type Bets @model @auth(rules: [{allow: public}]) {

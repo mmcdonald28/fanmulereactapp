@@ -16,5 +16,26 @@
         "FanMule": {}
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fanmule-dev-8710c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423553061:role/amplify-fanmule-dev-8710c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423553061:role/amplify-fanmule-dev-8710c-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-fanmule-dev-8710c-deployment",
+      "UnauthRoleName": "amplify-fanmule-dev-8710c-unauthRole",
+      "StackName": "amplify-fanmule-dev-8710c",
+      "StackId": "arn:aws:cloudformation:us-east-2:637423553061:stack/amplify-fanmule-dev-8710c/b9af3691-027d-11ef-9dac-0acdc9ee5859",
+      "AmplifyAppId": "d3ad4la1kkco63"
+    },
+    "categories": {
+      "auth": {
+        "FanMule": {}
+      },
+      "api": {
+        "FanMule": {}
+      }
+    }
   }
 }

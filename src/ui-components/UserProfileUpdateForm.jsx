@@ -9,11 +9,13 @@ import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { generateClient } from "aws-amplify/api";
-import { createUserProfile } from "../graphql/mutations";
+import { getUserProfile } from "../graphql/queries";
+import { updateUserProfile } from "../graphql/mutations";
 const client = generateClient();
-export default function UserProfileCreateForm(props) {
+export default function UserProfileUpdateForm(props) {
   const {
-    clearOnSuccess = true,
+    id: idProp,
+    userProfile: userProfileModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -36,13 +38,33 @@ export default function UserProfileCreateForm(props) {
   const [Birthday, setBirthday] = React.useState(initialValues.Birthday);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    setUsername(initialValues.Username);
-    setEmail(initialValues.Email);
-    setPassword(initialValues.Password);
-    setBalance(initialValues.Balance);
-    setBirthday(initialValues.Birthday);
+    const cleanValues = userProfileRecord
+      ? { ...initialValues, ...userProfileRecord }
+      : initialValues;
+    setUsername(cleanValues.Username);
+    setEmail(cleanValues.Email);
+    setPassword(cleanValues.Password);
+    setBalance(cleanValues.Balance);
+    setBirthday(cleanValues.Birthday);
     setErrors({});
   };
+  const [userProfileRecord, setUserProfileRecord] =
+    React.useState(userProfileModelProp);
+  React.useEffect(() => {
+    const queryData = async () => {
+      const record = idProp
+        ? (
+            await client.graphql({
+              query: getUserProfile.replaceAll("__typename", ""),
+              variables: { id: idProp },
+            })
+          )?.data?.getUserProfile
+        : userProfileModelProp;
+      setUserProfileRecord(record);
+    };
+    queryData();
+  }, [idProp, userProfileModelProp]);
+  React.useEffect(resetStateValues, [userProfileRecord]);
   const validations = {
     Username: [{ type: "Required" }],
     Email: [{ type: "Required" }, { type: "Email" }],
@@ -79,8 +101,8 @@ export default function UserProfileCreateForm(props) {
           Username,
           Email,
           Password,
-          Balance,
-          Birthday,
+          Balance: Balance ?? null,
+          Birthday: Birthday ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -111,18 +133,16 @@ export default function UserProfileCreateForm(props) {
             }
           });
           await client.graphql({
-            query: createUserProfile.replaceAll("__typename", ""),
+            query: updateUserProfile.replaceAll("__typename", ""),
             variables: {
               input: {
+                id: userProfileRecord.id,
                 ...modelFields,
               },
             },
           });
           if (onSuccess) {
             onSuccess(modelFields);
-          }
-          if (clearOnSuccess) {
-            resetStateValues();
           }
         } catch (err) {
           if (onError) {
@@ -131,7 +151,7 @@ export default function UserProfileCreateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "UserProfileCreateForm")}
+      {...getOverrideProps(overrides, "UserProfileUpdateForm")}
       {...rest}
     >
       <TextField
@@ -284,13 +304,14 @@ export default function UserProfileCreateForm(props) {
         {...getOverrideProps(overrides, "CTAFlex")}
       >
         <Button
-          children="Clear"
+          children="Reset"
           type="reset"
           onClick={(event) => {
             event.preventDefault();
             resetStateValues();
           }}
-          {...getOverrideProps(overrides, "ClearButton")}
+          isDisabled={!(idProp || userProfileModelProp)}
+          {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
           gap="15px"
@@ -300,7 +321,10 @@ export default function UserProfileCreateForm(props) {
             children="Submit"
             type="submit"
             variation="primary"
-            isDisabled={Object.values(errors).some((e) => e?.hasError)}
+            isDisabled={
+              !(idProp || userProfileModelProp) ||
+              Object.values(errors).some((e) => e?.hasError)
+            }
             {...getOverrideProps(overrides, "SubmitButton")}
           ></Button>
         </Flex>

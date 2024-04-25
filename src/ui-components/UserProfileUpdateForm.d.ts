@@ -21,14 +21,14 @@ export declare type ValidationResponse = {
     errorMessage?: string;
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
-export declare type UserProfileCreateFormInputValues = {
+export declare type UserProfileUpdateFormInputValues = {
     Username?: string;
     Email?: string;
     Password?: string;
     Balance?: number;
     Birthday?: string;
 };
-export declare type UserProfileCreateFormValidationValues = {
+export declare type UserProfileUpdateFormValidationValues = {
     Username?: ValidationFunction<string>;
     Email?: ValidationFunction<string>;
     Password?: ValidationFunction<string>;
@@ -36,22 +36,23 @@ export declare type UserProfileCreateFormValidationValues = {
     Birthday?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type UserProfileCreateFormOverridesProps = {
-    UserProfileCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
+export declare type UserProfileUpdateFormOverridesProps = {
+    UserProfileUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     Username?: PrimitiveOverrideProps<TextFieldProps>;
     Email?: PrimitiveOverrideProps<TextFieldProps>;
     Password?: PrimitiveOverrideProps<TextFieldProps>;
     Balance?: PrimitiveOverrideProps<TextFieldProps>;
     Birthday?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
-export declare type UserProfileCreateFormProps = React.PropsWithChildren<{
-    overrides?: UserProfileCreateFormOverridesProps | undefined | null;
+export declare type UserProfileUpdateFormProps = React.PropsWithChildren<{
+    overrides?: UserProfileUpdateFormOverridesProps | undefined | null;
 } & {
-    clearOnSuccess?: boolean;
-    onSubmit?: (fields: UserProfileCreateFormInputValues) => UserProfileCreateFormInputValues;
-    onSuccess?: (fields: UserProfileCreateFormInputValues) => void;
-    onError?: (fields: UserProfileCreateFormInputValues, errorMessage: string) => void;
-    onChange?: (fields: UserProfileCreateFormInputValues) => UserProfileCreateFormInputValues;
-    onValidate?: UserProfileCreateFormValidationValues;
+    id?: string;
+    userProfile?: any;
+    onSubmit?: (fields: UserProfileUpdateFormInputValues) => UserProfileUpdateFormInputValues;
+    onSuccess?: (fields: UserProfileUpdateFormInputValues) => void;
+    onError?: (fields: UserProfileUpdateFormInputValues, errorMessage: string) => void;
+    onChange?: (fields: UserProfileUpdateFormInputValues) => UserProfileUpdateFormInputValues;
+    onValidate?: UserProfileUpdateFormValidationValues;
 } & React.CSSProperties>;
-export default function UserProfileCreateForm(props: UserProfileCreateFormProps): React.ReactElement;
+export default function UserProfileUpdateForm(props: UserProfileUpdateFormProps): React.ReactElement;

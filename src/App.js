@@ -9,7 +9,7 @@ import BaseballPage from './sportsPages/BaseballPage';
 import SoftballPage from './sportsPages/SoftballPage';
 import TennisPage from './sportsPages/TennisPage';
 import TFPage from './sportsPages/TFPage';
-import HomePage from './HomePage';
+// import HomePage from './HomePage';
 import {
   withAuthenticator,
   Button,
@@ -30,7 +30,7 @@ function Home({ signOut }) {
       <div className="App">
         <Navbar signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/menslacrosse" element={<MensLacrossePage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
           <Route path="/womenslacrosse" element={<WomensLacrossePage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
           <Route path="/baseball" element={<BaseballPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
