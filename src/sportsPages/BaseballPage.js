@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, Button } from "@aws-amplify/ui-react";
 import baseballLogo from '../images/baseball-logo.png';
 import '../App.css';
 import './sportsPages.css';
 import '../button.css'; // Update the import path
 import Navbar from '../navBar';
+import { listSportingEvents } from '../graphql/queries';
+import { Amplify } from 'aws-amplify';
+import { generateClient, get } from 'aws-amplify/api';
+import config from '../amplifyconfiguration.json';
+Amplify.configure(config);
+
+const client = generateClient();
 
 function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
   const [activeButton, setActiveButton] = useState({});
+  const [matches, setMatches] = useState([]);
 
   const bettingLines = [
     { id: 1, name: "Team A to Win", odds: -110 },
@@ -24,109 +32,47 @@ function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
     }));
   };
 
+  useEffect(() => {
+    const fetchMatches = async () => {
+      try {
+        const matchData = await client.graphql({ query: listSportingEvents});
+        setMatches(matchData.data.listSportingEvents.items);
+      } catch (err) {
+        console.error('Error fetching matches:', err);
+      }
+    };
+    fetchMatches();
+  }, []);
+
+  // console.log('matches:', matches)
+  // console.log(matches[0].Home)
+
   return (
-    <div className="baseball-page">
+    <div className="sports-betting-page">
       <Navbar signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />
+  
       <div className="betting-lines">
-        {bettingLines.map((line) => (
-          <div key={line.id} className="betting-line">
-            <Image src={baseballLogo} className="sport-logo" alt="Baseball Logo" width="50px" height="50px" />
-            <div className="bet-description">{line.name}</div>
-            <div>
-              {line.id === 1 && (
-                <>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'teamA' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'teamA')}
-                  >
-                    Team A (-110)
-                  </Button>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'teamB' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'teamB')}
-                  >
-                    Team B (-110)
-                  </Button>
-                </>
-              )}
-              {line.id === 2 && (
-                <>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'teamA' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'teamA')}
-                  >
-                    Team A (-110)
-                  </Button>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'teamB' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'teamB')}
-                  >
-                    Team B (-110)
-                  </Button>
-                </>
-              )}
-              {line.id === 3 && (
-                <>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'over' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'over')}
-                  >
-                    Over (-110)
-                  </Button>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'under' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'under')}
-                  >
-                    Under (-110)
-                  </Button>
-                </>
-              )}
-              {line.id === 4 && (
-                <>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'over' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'over')}
-                  >
-                    Over (-110)
-                  </Button>
-                  <Button 
-                    className={`button ${activeButton[line.id] === 'under' ? 'active' : ''}`} 
-                    onClick={() => handleButtonClick(line.id, 'under')}
-                  >
-                    Under (-110)
-                  </Button>
-                </>
-              )}
-              {line.id === 5 && (
-                <Button 
-                  className={`button ${activeButton[line.id] === 'playerA' ? 'active' : ''}`} 
-                  onClick={() => handleButtonClick(line.id, 'playerA')}
-                >
-                  Player A to Hit a Home Run (-110)
-                </Button>
-              )}
+        {matches.map((match) => (
+          <div key={match.id} className="betting-line-item">
+            <div className="bet-description">{match.Away} @ {match.Home}</div>
+  
+            <div className="betting-options">
+              <Button className="bet Button point-spread">{match.HomeSP}</Button>
+              <Button className="bet Button moneyline">{match.HomeML}</Button>
+              <Button className="bet Button over-under">{`O ${match.ouLine}`}</Button>
+  
+              <Button className="bet Button point-spread">{match.AwaySP}</Button>
+              <Button className="bet Button moneyline">{match.AwayML}</Button>
+              <Button className="bet Button over-under">{`U ${match.ouLine}`}</Button>
+  
             </div>
           </div>
         ))}
       </div>
-      <div className="button-container">
-        <Button
-          className={`button ${activeButton.saveForLater ? 'active' : ''}`}
-          onClick={() => handleButtonClick('saveForLater', 'saveForLater')}
-          style={{ backgroundColor: activeButton.saveForLater ? 'red' : '' }}
-        >
-          Save for Later
-        </Button>
-        <Button
-          className={`button ${activeButton.submit ? 'active' : ''}`}
-          onClick={() => handleButtonClick('submit', 'submit')}
-          style={{ backgroundColor: activeButton.submit ? 'red' : '' }}
-        >
-          Submit
-        </Button>
-      </div>
     </div>
   );
+  
+  
 }
 
 export default BaseballPage;

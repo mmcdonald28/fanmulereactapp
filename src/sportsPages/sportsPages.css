@@ -21,3 +21,30 @@
   .bet-description {
     flex-grow: 1;
   }
+  .betting-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+    grid-template-rows: repeat(2, 1fr); /* Creates 2 rows */
+    gap: 10px; /* Adjust the space between grid items */
+    justify-content: end; /* Aligns the grid to the right */
+    align-items: center; /* Aligns the grid items vertically */
+    max-width: fit-content; /* Fit the grid container to the content size */
+    margin-left: auto; /* Push the grid container to the right */
+  }
+
+  .betting-line-item {
+    display: flex;
+    justify-content: space-between; /* Space between the two child divs */
+    align-items: center; /* Vertically center align items */
+    margin-bottom: 10px; /* Space between each betting line item, adjust as needed */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Button Styling */
+  .bet.Button {
+    padding: 10px;
+    /* Add additional button styling such as background-color, border, etc. */
+    /* Ensure buttons are same size for a uniform grid */
+  }
+  
