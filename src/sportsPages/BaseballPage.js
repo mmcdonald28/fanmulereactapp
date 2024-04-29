@@ -17,31 +17,26 @@ function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
   const [activeButton, setActiveButton] = useState({});
   const [matches, setMatches] = useState([]);
 
+  const bettingLines = [
+    { id: 1, name: "Team A to Win", odds: -110 },
+    { id: 2, name: "Team B to Win", odds: -110 },
+    { id: 3, name: "Total Runs Over 8.5", odds: -110 },
+    { id: 4, name: "Total Runs Under 8.5", odds: -110 },
+    { id: 5, name: "Player A to Hit a Home Run", odds: -110 },
+  ];
 
-
-  const handleButtonClick = (id, bet, option) => {
+  const handleButtonClick = (id, option) => {
     setActiveButton(prevState => ({
       ...prevState,
-      [id]: {
-        ...prevState[id],
-        [bet]: prevState[id][bet] === option ? null : option
-      }
+      [id]: prevState[id] === option ? null : option
     }));
   };
-
 
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const matchData = await client.graphql({ query: listSportingEvents });
-        const matches = matchData.data.listSportingEvents.items;
-        // Initialize state for active buttons
-        const activeButtonsInit = {};
-        matches.forEach((match, index) => {
-          activeButtonsInit[index] = { 0: null, 1: null, 2: null }; // 3 bets per match
-        });
-        setActiveButton(activeButtonsInit);
-        setMatches(matches);
+        const matchData = await client.graphql({ query: listSportingEvents});
+        setMatches(matchData.data.listSportingEvents.items);
       } catch (err) {
         console.error('Error fetching matches:', err);
       }
@@ -49,90 +44,35 @@ function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
     fetchMatches();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchMatches = async () => {
-  //     try {
-  //       const matchData = await client.graphql({ query: listSportingEvents });
-  //       setMatches(matchData.data.listSportingEvents.items);
-  //     } catch (err) {
-  //       console.error('Error fetching matches:', err);
-  //     }
-  //   };
-  //   fetchMatches();
-  // }, []);
+  // console.log('matches:', matches)
+  // console.log(matches[0].Home)
 
   return (
     <div className="sports-betting-page">
       <Navbar signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />
-
+  
       <div className="betting-lines">
-        {matches.map((match, index) => (
-          <div key={match.id} className="betting-line-item betting-line">
-            <Image src={baseballLogo} className="sport-logo" alt="Men's Lacrosse Logo" width="50px" height="50px" />
+        {matches.map((match) => (
+          <div key={match.id} className="betting-line-item">
             <div className="bet-description">{match.Away} @ {match.Home}</div>
-
+  
             <div className="betting-options">
-              <Button
-                className={`button ${activeButton[index][0] === 'A' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 0, 'A')}
-                style={{ backgroundColor: activeButton[index][0] === 'A' ? 'red' : '' }}>
-                {match.HomeSP} ({match.HomeSPodds})
-              </Button>
-              <Button
-                className={`button ${activeButton[index][1] === 'A' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 1, 'A')}
-                style={{ backgroundColor: activeButton[index][1] === 'A' ? 'red' : '' }}>
-                {match.HomeML}
-              </Button>
-              <Button
-                className={`button ${activeButton[index][2] === 'A' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 2, 'A')}
-                style={{ backgroundColor: activeButton[index][2] === 'A' ? 'red' : '' }}>
-                {`O ${match.ouLine}`} ({match.ouOdds})
-              </Button>
-
-              <Button
-                className={`button ${activeButton[index][0] === 'B' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 0, 'B')}
-                style={{ backgroundColor: activeButton[index][0] === 'B' ? 'red' : '' }}>
-                {match.AwaySP} ({match.AwaySPodds})
-              </Button>
-              <Button
-                className={`button ${activeButton[index][1] === 'B' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 1, 'B')}
-                style={{ backgroundColor: activeButton[index][1] === 'B' ? 'red' : '' }}>
-                {match.AwayML}
-              </Button>
-              <Button
-                className={`button ${activeButton[index][2] === 'B' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 2, 'B')}
-                style={{ backgroundColor: activeButton[index][2] === 'B' ? 'red' : '' }}>
-                {`U ${match.ouLine}`} ({match.ouOdds})
-              </Button>
+              <Button className="bet Button point-spread">{match.HomeSP}</Button>
+              <Button className="bet Button moneyline">{match.HomeML}</Button>
+              <Button className="bet Button over-under">{`O ${match.ouLine}`}</Button>
+  
+              <Button className="bet Button point-spread">{match.AwaySP}</Button>
+              <Button className="bet Button moneyline">{match.AwayML}</Button>
+              <Button className="bet Button over-under">{`U ${match.ouLine}`}</Button>
+  
             </div>
           </div>
         ))}
       </div>
-      <div className="button-container">
-        <Button
-          className={`button ${activeButton.saveForLater ? 'active' : ''}`}
-          onClick={() => handleButtonClick('saveForLater', 'saveForLater')}
-          style={{ backgroundColor: activeButton.saveForLater ? 'red' : '' }}
-        >
-          Save for Later
-        </Button>
-        <Button
-          className={`button ${activeButton.submit ? 'active' : ''}`}
-          onClick={() => handleButtonClick('submit', 'submit')}
-          style={{ backgroundColor: activeButton.submit ? 'red' : '' }}
-        >
-          Submit
-        </Button>
-      </div>
     </div>
   );
-
-
+  
+  
 }
 
 export default BaseballPage;
