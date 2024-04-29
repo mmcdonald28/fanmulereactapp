@@ -68,7 +68,7 @@ function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
       <div className="betting-lines">
         {matches.map((match, index) => (
           <div key={match.id} className="betting-line-item betting-line">
-            <Image src={baseballLogo} className="sport-logo" alt="Men's Lacrosse Logo" width="50px" height="50px" />
+            <Image src={baseballLogo} className="sport-logo" alt="Men's Baseball Logo" width="50px" height="50px" />
             <div className="bet-description">{match.Away} @ {match.Home}</div>
 
             <div className="betting-options">
