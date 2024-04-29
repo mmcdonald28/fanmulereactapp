@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Image, View } from "@aws-amplify/ui-react";
-import logo from './images/logo.svg';
+import logo from './images/account icon.jpeg';
 import logo2 from './images/logo_2.png';
 import './App.css';
 

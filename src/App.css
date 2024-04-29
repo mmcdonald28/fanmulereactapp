@@ -46,7 +46,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #333;
+  background-color: #2D2D2D;
   padding: 10px 20px;
   z-index: 1000; /* Ensure the navbar is above other content */
 }
@@ -119,4 +119,17 @@
 
 .dropdown-btn:hover {
   background-color: #ddd;
+}
+
+/* Set the authenticator to the corret colors */
+[data-amplify-authenticator] {
+  --amplify-components-authenticator-router-box-shadow: 0 0 16px #B10B0B; /* PMS 201 Red */
+  --amplify-components-authenticator-router-border-width: 0;
+  --amplify-components-authenticator-form-padding: var(--amplify-space-medium) var(--amplify-space-xl) var(--amplify-space-xl);
+  --amplify-components-button-primary-background-color: #B10B0B; /* PMS 201 Red */
+  --amplify-components-fieldcontrol-focus-box-shadow: 0 0 0 2px #2D2D2D; /* PMS 429 Gray */
+  --amplify-components-tabs-item-active-border-color: #B10B0B; /* PMS 201 Red */
+  --amplify-components-tabs-item-color: #2D2D2D; /* PMS 429 Gray */
+  --amplify-components-tabs-item-active-color: #B10B0B; /* PMS 201 Red */
+  --amplify-components-button-link-color: #2D2D2D; /* PMS 429 Gray */
 }

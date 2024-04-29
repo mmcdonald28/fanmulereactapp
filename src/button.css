@@ -9,11 +9,11 @@
   }
   
   .button:hover {
-    background-color: #dc3545; /* Red color on hover */
+    background-color: #A41D36; /* Red color on hover */
     color: #ffffff; /* Change the text color to white on hover */
   }
   
   .button.active {
-    background-color: #dc3545; /* Blue color when the button is clicked */
+    background-color: #2D2D2D; /* Grey color when the button is clicked */
     color: #ffffff; /* Change the text color to white when the button is clicked */
   }
