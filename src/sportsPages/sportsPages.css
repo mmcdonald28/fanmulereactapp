@@ -1,51 +1,60 @@
 /* LacrossePage-specific styles */
 .betting-lines {
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px; /* Adjust this value to fit your design */
-  }
-  
-  
-  .betting-line {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .sport-logo {
-    margin-right: 10px;
-  }
-  
-  .bet-description {
-    /* justify-content: start; */
-    text-align: left;
-    float: left;
-    flex-grow: 1;
-  }
-  .betting-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
-    grid-template-rows: repeat(2, 1fr); /* Creates 2 rows */
-    gap: 10px; /* Adjust the space between grid items */
-    justify-content: end; /* Aligns the grid to the right */
-    align-items: center; /* Aligns the grid items vertically */
-    max-width: fit-content; /* Fit the grid container to the content size */
-    margin-left: auto; /* Push the grid container to the right */
-  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  /* Adjust this value to fit your design */
+}
 
-  .betting-line-item {
-    display: flex;
-    align-items: center; /* Aligns the grid items vertically */
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  /* Button Styling */
-  .bet.Button {
-    padding: 10px;
-    /* Add additional button styling such as background-color, border, etc. */
-    /* Ensure buttons are same size for a uniform grid */
-  }
-  
+
+.betting-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.sport-logo {
+  margin-right: 10px;
+}
+
+.bet-description {
+  /* justify-content: start; */
+  text-align: left;
+  float: left;
+  flex-grow: 1;
+}
+
+.betting-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates 3 columns */
+  grid-template-rows: repeat(2, 1fr);
+  /* Creates 2 rows */
+  gap: 10px;
+  /* Adjust the space between grid items */
+  justify-content: end;
+  /* Aligns the grid to the right */
+  align-items: center;
+  /* Aligns the grid items vertically */
+  max-width: fit-content;
+  /* Fit the grid container to the content size */
+  margin-left: auto;
+  /* Push the grid container to the right */
+}
+
+.betting-line-item {
+  display: flex;
+  align-items: center;
+  /* Aligns the grid items vertically */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Button Styling */
+.bet.Button {
+  padding: 10px;
+  /* Add additional button styling such as background-color, border, etc. */
+  /* Ensure buttons are same size for a uniform grid */
+}
