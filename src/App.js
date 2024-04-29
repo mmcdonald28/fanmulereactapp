@@ -21,13 +21,13 @@ import {
   Card,
 } from "@aws-amplify/ui-react";
 
-function CustomAuthenticator() {
-  return (
-    <div>
-      <Authenticator />
-    </div>
-  );
-}
+// function CustomAuthenticator() {
+//   return (
+//     <div>
+//       <Authenticator />
+//     </div>
+//   );
+// }
 
 function Home({ signOut }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,5 +53,5 @@ function Home({ signOut }) {
   );
 }
 
-export default CustomAuthenticator(Home);
+export default withAuthenticator(Home);
 
