@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import "@aws-amplify/ui-react/styles.css";
 import Navbar from './navBar';
 import MensLacrossePage from './sportsPages/MensLacrossePage';
 import WomensLacrossePage from './sportsPages/WomensLacrossePage';
@@ -8,10 +9,6 @@ import BaseballPage from './sportsPages/BaseballPage';
 import SoftballPage from './sportsPages/SoftballPage';
 import TennisPage from './sportsPages/TennisPage';
 import TFPage from './sportsPages/TFPage';
-import { Amplify } from 'aws-amplify';
-import { Authenticator } from '@aws-amplify/ui-react';
-//import { Authenticator } from 'aws-amplify-react';
-// import HomePage from './HomePage';
 import {
   withAuthenticator,
   Button,
@@ -20,14 +17,6 @@ import {
   View,
   Card,
 } from "@aws-amplify/ui-react";
-
-function CustomAuthenticator() {
-  return (
-    <div>
-      <Authenticator />
-    </div>
-  );
-}
 
 function Home({ signOut }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,5 +42,5 @@ function Home({ signOut }) {
   );
 }
 
-export default CustomAuthenticator(Home);
+export default withAuthenticator(Home);
 
