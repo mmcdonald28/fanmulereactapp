@@ -33,7 +33,7 @@ function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const matchData = await client.graphql({ query: listSportingEvents });
+        const matchData = await client.graphql({ query: listSportingEvents, variables: { filter: { Sport: { eq: "MBA" } } } });
         const matches = matchData.data.listSportingEvents.items;
         // Initialize state for active buttons
         const activeButtonsInit = {};
@@ -54,53 +54,57 @@ function BaseballPage({ signOut, toggleDropdown, dropdownOpen }) {
       <Navbar signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />
 
       <div className="betting-lines">
-        {matches.map((match, index) => (
-          <div key={match.id} className="betting-line-item betting-line">
-            <Image src={baseballLogo} className="sport-logo" alt="Men's Baseball Logo" width="50px" height="50px" />
-            <div className="bet-description">{match.Away} @ {match.Home}</div>
+        {matches.length === 0 ? (
+          <div className="no-matches">No upcoming matches</div>
+        ) : (
+          matches.map((match, index) => (
+            <div key={match.id} className="betting-line-item betting-line">
+              <Image src={baseballLogo} className="sport-logo" alt="Men's Baseball Logo" width="50px" height="50px" />
+              <div className="bet-description">{match.Away} @ {match.Home}</div>
 
-            <div className="betting-options">
-              <Button
-                className={`button ${activeButton[index][0] === 'A' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 0, 'A')}
-                style={{ backgroundColor: activeButton[index][0] === 'A' ? 'red' : '' }}>
-                {match.HomeSP} ({match.HomeSPodds})
-              </Button>
-              <Button
-                className={`button ${activeButton[index][1] === 'A' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 1, 'A')}
-                style={{ backgroundColor: activeButton[index][1] === 'A' ? 'red' : '' }}>
-                {match.HomeML}
-              </Button>
-              <Button
-                className={`button ${activeButton[index][2] === 'A' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 2, 'A')}
-                style={{ backgroundColor: activeButton[index][2] === 'A' ? 'red' : '' }}>
-                {`O ${match.ouLine}`} ({match.ouOdds})
-              </Button>
+              <div className="betting-options">
+                <Button
+                  className={`button ${activeButton[index][0] === 'A' ? 'active' : ''}`}
+                  onClick={() => handleButtonClick(index, 0, 'A')}
+                  style={{ backgroundColor: activeButton[index][0] === 'A' ? 'red' : '' }}>
+                  {match.HomeSP} ({match.HomeSPodds})
+                </Button>
+                <Button
+                  className={`button ${activeButton[index][1] === 'A' ? 'active' : ''}`}
+                  onClick={() => handleButtonClick(index, 1, 'A')}
+                  style={{ backgroundColor: activeButton[index][1] === 'A' ? 'red' : '' }}>
+                  {match.HomeML}
+                </Button>
+                <Button
+                  className={`button ${activeButton[index][2] === 'A' ? 'active' : ''}`}
+                  onClick={() => handleButtonClick(index, 2, 'A')}
+                  style={{ backgroundColor: activeButton[index][2] === 'A' ? 'red' : '' }}>
+                  {`O ${match.ouLine}`} ({match.ouOdds})
+                </Button>
 
-              <Button
-                className={`button ${activeButton[index][0] === 'B' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 0, 'B')}
-                style={{ backgroundColor: activeButton[index][0] === 'B' ? 'red' : '' }}>
-                {match.AwaySP} ({match.AwaySPodds})
-              </Button>
-              <Button
-                className={`button ${activeButton[index][1] === 'B' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 1, 'B')}
-                style={{ backgroundColor: activeButton[index][1] === 'B' ? 'red' : '' }}>
-                {match.AwayML}
-              </Button>
-              <Button
-                className={`button ${activeButton[index][2] === 'B' ? 'active' : ''}`}
-                onClick={() => handleButtonClick(index, 2, 'B')}
-                style={{ backgroundColor: activeButton[index][2] === 'B' ? 'red' : '' }}>
-                {`U ${match.ouLine}`} ({match.ouOdds})
-              </Button>
+                <Button
+                  className={`button ${activeButton[index][0] === 'B' ? 'active' : ''}`}
+                  onClick={() => handleButtonClick(index, 0, 'B')}
+                  style={{ backgroundColor: activeButton[index][0] === 'B' ? 'red' : '' }}>
+                  {match.AwaySP} ({match.AwaySPodds})
+                </Button>
+                <Button
+                  className={`button ${activeButton[index][1] === 'B' ? 'active' : ''}`}
+                  onClick={() => handleButtonClick(index, 1, 'B')}
+                  style={{ backgroundColor: activeButton[index][1] === 'B' ? 'red' : '' }}>
+                  {match.AwayML}
+                </Button>
+                <Button
+                  className={`button ${activeButton[index][2] === 'B' ? 'active' : ''}`}
+                  onClick={() => handleButtonClick(index, 2, 'B')}
+                  style={{ backgroundColor: activeButton[index][2] === 'B' ? 'red' : '' }}>
+                  {`U ${match.ouLine}`} ({match.ouOdds})
+                </Button>
+              </div>
             </div>
-          </div>
-        ))}
+          )))}
       </div>
+
       <div className="button-container">
         <Button
           className={`button ${activeButton.saveForLater ? 'active' : ''}`}
