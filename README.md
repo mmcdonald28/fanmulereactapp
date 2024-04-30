@@ -6,6 +6,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `python db_create.py`
+
+Runs the python script to create new entries in the GraphQL database on Amplify according to a custom .json file or MuhlenbergBets.json by default. Make sure all the required python packages are installed. If it doesn't run, just pip install all the packages that are missing according to the error message.
+
+Example usage:
+```
+python db_create.py --sport WSB --file MuhlenbergBets.json
+```
+this will create new entries in the database for Softball according to the data in MuhlenbergBets.json.
+
+Example output:
+```
+{'createSportingEvent': {'id': '8faac56b-c14a-41f1-b4d8-2b6de04e78c6', 'Sport': 'WSB', 'EventDate': '2024-04-27', 'EventTime': '00:00:00', 'Result': 'undecided', 'betsID': 'temp', 'Home': 'Muhlenberg', 'Away': 'McDaniel', 'HomeML': '-160', 'AwayML': '+140', 'HomeSP': '-1.5', 'AwaySP': '+1.5', 'HomeSPodds': '-110', 'AwaySPodds': '-110', 'ouLine': 9.5, 'ouOdds': '-110', 'createdAt': '2024-04-30T18:59:48.104Z', 'updatedAt': '2024-04-30T18:59:48.104Z', '__typename': 'SportingEvent'}}
+{'createSportingEvent': {'id': '51366114-d1e7-419f-a348-c7535c94e4f6', 'Sport': 'WSB', 'EventDate': '2024-04-27', 'EventTime': '00:00:00', 'Result': 'undecided', 'betsID': 'temp', 'Home': 'Muhlenberg', 'Away': 'McDaniel', 'HomeML': '-160', 'AwayML': '+140', 'HomeSP': '-1.5', 'AwaySP': '+1.5', 'HomeSPodds': '-110', 'AwaySPodds': '-110', 'ouLine': 9.5, 'ouOdds': '-110', 'createdAt': '2024-04-30T18:59:48.383Z', 'updatedAt': '2024-04-30T18:59:48.383Z', '__typename': 'SportingEvent'}}
+```
+If you see this it means database entries were successfully created.
+
+
 ### `npm start`
 
 Runs the app in the development mode.\

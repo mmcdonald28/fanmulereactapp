@@ -2,7 +2,21 @@ from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
 import json
 import datetime
+import argparse
 
+parser = argparse.ArgumentParser(
+    description="""
+    Updates GraphQL database with the latest sporting events. Reads from Muhlenbergbets.json by default, 
+    have the option to define custom file path. through --file flag. 
+    See https://ncaaorg.s3.amazonaws.com/championships/resources/common/NCAA_SportCodes.pdf for the list of sport codes
+    """
+)
+
+parser.add_argument("--sport", required=True, type=str, help="Sport code to scrape")
+parser.add_argument("--file", default='Muhlenbergbets.json', type=str, help="File path to read from")
+args = parser.parse_args()
+
+# Keep safe
 appsync_url = 'https://qksbyvmc4zdfni4xwfno7t6yei.appsync-api.us-east-2.amazonaws.com/graphql'
 api_key = 'da2-kd252azkbbalpcuedd3h5r3z3i' # If using API KEY authentication
 
@@ -57,7 +71,6 @@ def update_match(input: dict, sport: str):
     # print(input, sport)
     response = client.execute(mutation, variable_values={
         'input':{
-          # 'id': '000',
           'Sport': sport,
           'EventDate': translate_date(input['date']),
           'EventTime': "00:00:00",
@@ -77,10 +90,10 @@ def update_match(input: dict, sport: str):
     })
     return response
 
-with open('Muhlenbergbets.json', 'r') as file:
+with open(args.file, 'r') as file:
     bets = json.load(file)
 
-sport = 'MBA'
+sport = args.sport
 for event in bets[sport]:
     # print(event)
     response = update_match(event, sport)
