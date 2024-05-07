@@ -17,6 +17,8 @@ const client = generateClient();
 function WomensLacrossePage({ signOut, toggleDropdown, dropdownOpen }) {
   const [activeButton, setActiveButton] = useState({});
   const [matches, setMatches] = useState([]);
+  const [selectedBets, setSelectedBets] = useState([]);
+  const [savedBets, setSavedBets] = useState([]);
 
 
 

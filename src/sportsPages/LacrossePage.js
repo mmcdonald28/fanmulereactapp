@@ -30,6 +30,29 @@ function MensLacrossePage({ signOut, toggleDropdown, dropdownOpen }) {
     }));
   };
 
+  const handleSaveForLaterClick = () => {
+    const selected = Object.entries(activeButton)
+      .filter(([id, option]) => option !== null)
+      .map(([id, option]) => ({ id, option }));
+    setSavedBets(prevSavedBets => [...prevSavedBets, ...selected]);
+    setActiveButton({});
+    alert("Bets saved for later!");
+  };
+
+  const handleSubmitClick = () => {
+    const newSelected = Object.entries(activeButton)
+      .filter(([id, option]) => option !== null)
+      .map(([id, option]) => ({ id, option }));
+
+    setSelectedBets(prevSelectedBets => [
+      ...prevSelectedBets,
+      ...newSelected
+    ]);
+    setActiveButton({});
+    alert("Bets submitted!");
+  };
+
+
 
   useEffect(() => {
     const fetchMatches = async () => {
