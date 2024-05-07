@@ -9,7 +9,7 @@ function Navbar({ signOut, toggleDropdown, dropdownOpen }) {
   return (
     <View className="navbar">
       <Image src={logo2} className="navbar-logo-left" alt="logo" width="50px" height="50px" />
-      
+
       <div className="navbar-links">
         <NavLink to="/menslacrosse">Mens Lacrosse</NavLink>
         <NavLink to="/womenslacrosse">Womens Lacrosse</NavLink>
@@ -17,7 +17,7 @@ function Navbar({ signOut, toggleDropdown, dropdownOpen }) {
         <NavLink to="/softball">Softball</NavLink>
         <NavLink to="/trackandfield">Track/Field</NavLink>
       </div>
-      
+
       <div className="navbar-account" onClick={toggleDropdown}>
         <img src={logo} alt="account" />
         {dropdownOpen && (

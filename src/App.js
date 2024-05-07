@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './navBar';
@@ -10,6 +11,7 @@ import TennisPage from './sportsPages/TennisPage';
 import TFPage from './sportsPages/TFPage';
 import { Amplify } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
+import ActiveBetsPage from './ActiveBetsPage'
 //import { Authenticator } from 'aws-amplify-react';
 // import HomePage from './HomePage';
 import {
@@ -47,6 +49,7 @@ function Home({ signOut }) {
           <Route path="/softball" element={<SoftballPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
           <Route path="/tennis" element={<TennisPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
           <Route path="/trackandfield" element={<TFPage signOut={signOut} toggleDropdown={toggleDropdown} dropdownOpen={dropdownOpen} />} />
+          <Route path="/submitted-bets" element={<div>Testing Active Bets Page</div>} />
         </Routes>
       </div>
     </Router>
